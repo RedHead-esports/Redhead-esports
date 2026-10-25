@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import logoImg from "./logo.jpg";
 
 /* ====== SETTINGS ====== */
 const OWNER_WA = "916206549468";
 const OWNER_EMAIL = "777mrsevou@gmail.com"; // sirf is Gmail se Admin Panel khulega
-const LOGO_URL = "";                         // logo ka link (e.g. "/logo.png"), khali = "R" badge
 const SUPABASE_URL = "https://exkhfrwhxbbjqbauthlx.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV4a2hmcndoeGJianFiYXV0aGx4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5MTk3MzQsImV4cCI6MjEwODQ5NTczNH0.4a4TnxnNLP6COxGHkqraBZD7K-GClxfPfkG-48XKqdg";
 const MAX = 8;     // ek din me teams
@@ -282,7 +282,7 @@ export default function App() {
   return (
     <>
       <header><div className="hb">
-        <div className="br"><div className="lg">{LOGO_URL ? <img alt="Redhead eSports" src={LOGO_URL} /> : "R"}</div><span>REDHEAD <b>eSPORTS</b></span></div>
+        <div className="br"><div className="lg"><img alt="Redhead eSports" src={logoImg} /></div><span>REDHEAD <b>eSPORTS</b></span></div>
         <div className="lang">
           {[["en", "English"], ["hi", "हिन्दी"], ["hl", "Hinglish"]].map(([l, n]) => <button key={l} className={L === l ? "on" : ""} onClick={() => pickLang(l)}>{n}</button>)}
           <button id="snd" aria-label="Sound" onClick={toggleMute}>{muted ? "🔇" : "🔊"}</button>
@@ -291,6 +291,7 @@ export default function App() {
 
       <main>
         <section className="hero">
+          <img className="hlogo" alt="Red Head eSports logo" src={logoImg} />
           <div className="mu" style={{ color: "#cfcfd8" }}>{t("game")}</div>
           <h1>REDHEAD <span>eSPORTS</span></h1>
           <p>{t("sub")}</p>

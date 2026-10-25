@@ -107,3 +107,8 @@ footer{text-align:center;color:var(--mu);font-size:13px;padding:26px 0 8px}foote
 .shuf div{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:8px}
 .shuf span{padding:4px 10px;border-radius:99px;background:var(--s2);border:1px solid var(--bd);font-size:14px}
 @media (prefers-reduced-motion:reduce){.slide{animation:none}}
+
+/* ===== LOGO ===== */
+.lg{width:38px;height:38px;border-radius:50%;background:#000;box-shadow:0 0 12px rgba(255,200,61,.6)}
+.lg img{border-radius:50%}
+.hlogo{display:block;width:150px;height:150px;margin:0 auto 12px;border-radius:50%;object-fit:cover;box-shadow:0 0 30px rgba(255,200,61,.55),0 0 70px rgba(255,46,68,.28);position:relative}
