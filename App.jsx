@@ -13,7 +13,7 @@ const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /* ====== LANGUAGES ====== */
 const T = {
-en:{tdy:"Today",fullTag:"FULL",mDay:"Match day:",daysH:"Pick Match Day",canH:"Match Cancelled",canMsg:"Registration is closed for this day.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"The draw will appear here once all 8 teams are confirmed.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Draw Teams (Random)",redrawBtn:"🎲 Draw Again",resetDraw:"Reset draw",drawNeed:"Draw unlocks when 8 teams are confirmed.",shuf:"Shuffling…",cancelH:"Cancel / Reopen this day",notePh:"Reason (everyone will see this)",cancelBtn:"Cancel this day's match",reopenBtn:"Reopen this day",cfmRedraw:"Draw again? Current winners will be cleared.",cfmCancel:"Cancel this day's match? Everyone will see it.",cfmReset:"Reset the draw?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collected",aCopy:"Copy confirmed list",copied:"Copied ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Every Night · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots left",today:"Today's match:",
+en:{optLogin:"Login is optional",regd:"Registered ✓",tdy:"Today",fullTag:"FULL",mDay:"Match day:",daysH:"Pick Match Day",canH:"Match Cancelled",canMsg:"Registration is closed for this day.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"The draw will appear here once all 8 teams are confirmed.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Draw Teams (Random)",redrawBtn:"🎲 Draw Again",resetDraw:"Reset draw",drawNeed:"Draw unlocks when 8 teams are confirmed.",shuf:"Shuffling…",cancelH:"Cancel / Reopen this day",notePh:"Reason (everyone will see this)",cancelBtn:"Cancel this day's match",reopenBtn:"Reopen this day",cfmRedraw:"Draw again? Current winners will be cleared.",cfmCancel:"Cancel this day's match? Everyone will see it.",cfmReset:"Reset the draw?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collected",aCopy:"Copy confirmed list",copied:"Copied ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Every Night · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots left",today:"Today's match:",
  prizeH:"Entry & Prize Pool",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
  r1:"<b>Round 1:</b> 8 teams play 4 matches (4 vs 4) → 4 teams advance.",r2:"<b>Semi Final:</b> 4 teams play 2 matches (2 vs 2) → 2 teams advance.",r3:"<b>Final:</b> the last 2 teams fight for the title.",
  live:"Daily matches. Streamed LIVE on YouTube — occasionally I may not be able to go live.",
@@ -24,7 +24,7 @@ en:{tdy:"Today",fullTag:"FULL",mDay:"Match day:",daysH:"Pick Match Day",canH:"Ma
  full:"All 8 slots for this day are full. Pick another day!",bad:"Please fill all details correctly (UID: numbers only).",ok:"Registered! WhatsApp is opening — just press Send.",
  as:"Signed in as",adm:"Admin",mark:"Mark paid",unm:"Unpaid",delq:"Remove this team?",err:"Something went wrong: ",
  needLogin:"Login is not available here yet.",wa:"Hi Redhead eSports! I registered for the 8 PM Free Fire tournament.\nDate: {d}\nTeam: {t}\nIGN: {i}\nUID: {u}\nMobile: {m}\nEntry ₹234 – please share payment details."},
-hi:{tdy:"आज",fullTag:"फुल",mDay:"मैच का दिन:",daysH:"मैच का दिन चुनें",canH:"मैच कैंसिल",canMsg:"इस दिन के लिए रजिस्ट्रेशन बंद है।",drawH:"मैच ड्रॉ",rndTag:"🎲 रैंडम ड्रॉ",drawWait:"8 टीमें कन्फर्म होते ही ड्रॉ यहाँ दिखेगा।",rnd1:"राउंड 1",rnd2:"सेमी फाइनल",rnd3:"फाइनल",tbd:"तय नहीं",win:"विजेता",champ:"चैंपियन",runner:"उपविजेता",drawBtn:"🎲 टीमों का ड्रॉ (रैंडम)",redrawBtn:"🎲 दोबारा ड्रॉ",resetDraw:"ड्रॉ रीसेट",drawNeed:"8 टीमें कन्फर्म होने पर ड्रॉ खुलेगा।",shuf:"टीमें मिक्स हो रही हैं…",cancelH:"इस दिन को कैंसिल / दोबारा खोलें",notePh:"कारण (सबको दिखेगा)",cancelBtn:"इस दिन का मैच कैंसिल करें",reopenBtn:"इस दिन को दोबारा खोलें",cfmRedraw:"दोबारा ड्रॉ करें? मौजूदा विजेता हट जाएँगे।",cfmCancel:"इस दिन का मैच कैंसिल करें? सबको दिखेगा।",cfmReset:"ड्रॉ रीसेट करें?",admH:"एडमिन पैनल",aReg:"रजिस्टर्ड",aConf:"कन्फर्म",aCol:"कलेक्शन",aCopy:"कन्फर्म लिस्ट कॉपी करें",copied:"कॉपी हो गया ✓",game:"फ्री फायर",sub:"डेली फ्री फायर टूर्नामेंट",owner:"ओनर",daily:"रोज़ रात · 8:00 बजे",teams:"टीमें",every:"रोज़",left:"खाली स्लॉट",today:"आज का मैच:",
+hi:{optLogin:"लॉगिन ज़रूरी नहीं है",regd:"रजिस्टर हो चुका ✓",tdy:"आज",fullTag:"फुल",mDay:"मैच का दिन:",daysH:"मैच का दिन चुनें",canH:"मैच कैंसिल",canMsg:"इस दिन के लिए रजिस्ट्रेशन बंद है।",drawH:"मैच ड्रॉ",rndTag:"🎲 रैंडम ड्रॉ",drawWait:"8 टीमें कन्फर्म होते ही ड्रॉ यहाँ दिखेगा।",rnd1:"राउंड 1",rnd2:"सेमी फाइनल",rnd3:"फाइनल",tbd:"तय नहीं",win:"विजेता",champ:"चैंपियन",runner:"उपविजेता",drawBtn:"🎲 टीमों का ड्रॉ (रैंडम)",redrawBtn:"🎲 दोबारा ड्रॉ",resetDraw:"ड्रॉ रीसेट",drawNeed:"8 टीमें कन्फर्म होने पर ड्रॉ खुलेगा।",shuf:"टीमें मिक्स हो रही हैं…",cancelH:"इस दिन को कैंसिल / दोबारा खोलें",notePh:"कारण (सबको दिखेगा)",cancelBtn:"इस दिन का मैच कैंसिल करें",reopenBtn:"इस दिन को दोबारा खोलें",cfmRedraw:"दोबारा ड्रॉ करें? मौजूदा विजेता हट जाएँगे।",cfmCancel:"इस दिन का मैच कैंसिल करें? सबको दिखेगा।",cfmReset:"ड्रॉ रीसेट करें?",admH:"एडमिन पैनल",aReg:"रजिस्टर्ड",aConf:"कन्फर्म",aCol:"कलेक्शन",aCopy:"कन्फर्म लिस्ट कॉपी करें",copied:"कॉपी हो गया ✓",game:"फ्री फायर",sub:"डेली फ्री फायर टूर्नामेंट",owner:"ओनर",daily:"रोज़ रात · 8:00 बजे",teams:"टीमें",every:"रोज़",left:"खाली स्लॉट",today:"आज का मैच:",
  prizeH:"एंट्री और इनाम",entry:"एंट्री / टीम",p1:"पहला इनाम",p2:"दूसरा इनाम",fmtH:"मैच का फॉर्मेट",
  r1:"<b>राउंड 1:</b> 8 टीमें 4 मैच खेलेंगी (4 vs 4) → 4 टीमें आगे बढ़ेंगी।",r2:"<b>सेमी फाइनल:</b> 4 टीमें 2 मैच खेलेंगी (2 vs 2) → 2 टीमें आगे बढ़ेंगी।",r3:"<b>फाइनल:</b> आखिरी 2 टीमें खिताब के लिए भिड़ेंगी।",
  live:"मैच रोज़ होंगे। YouTube पर LIVE दिखाया जाएगा — कभी-कभी लाइव नहीं कर पाऊँगा।",
@@ -35,7 +35,7 @@ hi:{tdy:"आज",fullTag:"फुल",mDay:"मैच का दिन:",daysH:"�
  full:"इस दिन के सभी 8 स्लॉट भर चुके हैं। कोई और दिन चुनें!",bad:"कृपया सारी जानकारी सही भरें (UID में सिर्फ़ नंबर)।",ok:"रजिस्टर हो गया! WhatsApp खुल रहा है — बस Send दबाएँ।",
  as:"लॉगिन:",adm:"एडमिन",mark:"पेड करें",unm:"अनपेड",delq:"यह टीम हटाएँ?",err:"कुछ गड़बड़ हुई: ",
  needLogin:"यहाँ अभी लॉगिन उपलब्ध नहीं है।",wa:"नमस्ते Redhead eSports! मैंने रात 8 बजे के Free Fire टूर्नामेंट के लिए रजिस्टर किया है।\nतारीख: {d}\nटीम: {t}\nIGN: {i}\nUID: {u}\nमोबाइल: {m}\nएंट्री ₹234 – कृपया पेमेंट की जानकारी भेजें।"},
-hl:{tdy:"Aaj",fullTag:"FULL",mDay:"Match ka din:",daysH:"Match Day Chuno",canH:"Match Cancel",canMsg:"Is din ke liye registration band hai.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"8 teams confirm hote hi draw yahan dikhega.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Teams Draw (Random)",redrawBtn:"🎲 Dobara Draw",resetDraw:"Draw Reset",drawNeed:"8 teams confirm hone par draw khulega.",shuf:"Teams mix ho rahi hain…",cancelH:"Is din ko Cancel / Dobara Kholo",notePh:"Reason (sabko dikhega)",cancelBtn:"Is din ka match Cancel karo",reopenBtn:"Is din ko dobara kholo",cfmRedraw:"Dobara draw karein? Abhi ke winners hat jayenge.",cfmCancel:"Is din ka match cancel karein? Sabko dikhega.",cfmReset:"Draw reset karein?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collection",aCopy:"Confirmed list copy karo",copied:"Copy ho gaya ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Roz Raat · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots bache",today:"Aaj ka match:",
+hl:{optLogin:"Login zaroori nahi hai",regd:"Register ho chuka ✓",tdy:"Aaj",fullTag:"FULL",mDay:"Match ka din:",daysH:"Match Day Chuno",canH:"Match Cancel",canMsg:"Is din ke liye registration band hai.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"8 teams confirm hote hi draw yahan dikhega.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Teams Draw (Random)",redrawBtn:"🎲 Dobara Draw",resetDraw:"Draw Reset",drawNeed:"8 teams confirm hone par draw khulega.",shuf:"Teams mix ho rahi hain…",cancelH:"Is din ko Cancel / Dobara Kholo",notePh:"Reason (sabko dikhega)",cancelBtn:"Is din ka match Cancel karo",reopenBtn:"Is din ko dobara kholo",cfmRedraw:"Dobara draw karein? Abhi ke winners hat jayenge.",cfmCancel:"Is din ka match cancel karein? Sabko dikhega.",cfmReset:"Draw reset karein?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collection",aCopy:"Confirmed list copy karo",copied:"Copy ho gaya ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Roz Raat · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots bache",today:"Aaj ka match:",
  prizeH:"Entry aur Prize",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
  r1:"<b>Round 1:</b> 8 teams 4 match khelengi (4 vs 4) → 4 teams aage.",r2:"<b>Semi Final:</b> 4 teams 2 match khelengi (2 vs 2) → 2 teams aage.",r3:"<b>Final:</b> aakhri 2 teams title ke liye ladengi.",
  live:"Daily match hoga. YouTube pe LIVE aaunga — kabhi kabhi live nahi kar paaunga.",
@@ -143,6 +143,10 @@ export default function App() {
   const [note, setNote] = useState("");
   const [shuf, setShuf] = useState(null);
   const tx = useRef(null);
+  const [gid] = useState(() => {
+    const mk = () => "g_" + ((window.crypto && crypto.randomUUID) ? crypto.randomUUID().replace(/-/g, "").slice(0, 16) : Math.random().toString(16).slice(2, 18));
+    try { let g = localStorage.getItem("gid"); if (!g) { g = mk(); localStorage.setItem("gid", g); } return g; } catch (e) { return mk(); }
+  });
   const t = (k) => (T[L] || T.en)[k];
   const H = ({ k }) => <span dangerouslySetInnerHTML={{ __html: t(k) }} />;
 
@@ -193,7 +197,8 @@ export default function App() {
   const draw = ds.draw || null;
   const teams = rows.filter((x) => x.date === D).sort((a, b) => (a.at || 0) - (b.at || 0));
   const conf = teams.filter((x) => x.paid);
-  const mine = user ? teams.find((x) => x.id === user.id + "_" + D) || null : null;
+  const myKey = (user ? user.id : gid) + "_" + D;
+  const mine = teams.find((x) => x.id === myKey) || null;
   const full = conf.length >= MAX && !mine;
   const closed = full || cancelled;
   const isA = !!(user && user.isOwner);
@@ -219,7 +224,9 @@ export default function App() {
     if (closed) { say(cancelled ? t("canMsg") : t("full"), "er"); return; }
     const team = f.team.trim(), ign = f.ign.trim(), uid = f.uid.trim(), mob = f.mob.replace(/\D/g, "");
     if (!team || !ign || !/^\d{6,14}$/.test(uid) || mob.length < 10 || mob.length > 13) { say(t("bad"), "er"); sfx.err(); return; }
-    const r = await sb.from("teams").upsert({ id: user.id + "_" + D, team, ign, date: D, paid: mine ? !!mine.paid : false, at: mine ? mine.at : Date.now() });
+    if (!user && mine) { say(t("regd"), "go"); return; }
+    const row = { id: myKey, team, ign, date: D, paid: mine ? !!mine.paid : false, at: mine ? mine.at : Date.now() };
+    const r = user ? await sb.from("teams").upsert(row) : await sb.from("teams").insert(row);
     if (r.error) { say(t("err") + r.error.message, "er"); return; }
     say(t("ok"), "go"); sfx.ok(); load(); openWA();
   }
@@ -342,26 +349,26 @@ export default function App() {
           )}
 
           <section className="sec"><h2>{t("regH")}</h2>
-            {!user ? (
-              <div className="card">
-                <p className="mu" style={{ margin: 0 }}>{t("loginTxt")}</p>
-                <button className="btn" id="loginBtn" onClick={login}>{t("loginBtn")}</button>
-                <div className="msg er">{loginMsg}</div>
-              </div>
-            ) : (
-              <div className="card">
+            <div className="card">
+              {user ? (
                 <div className="row" style={{ paddingTop: 0 }}>
                   <span className="mu">{t("as")} {user.name || user.email || "Player"}{isA ? " · " + t("adm") : ""}</span>
                   <button className="sm" onClick={() => sb.auth.signOut()}>{t("logout")}</button>
                 </div>
-                <label>{t("fTeam")}</label><input value={f.team} onChange={set("team")} maxLength={30} autoComplete="off" />
-                <label>{t("fIgn")}</label><input value={f.ign} onChange={set("ign")} maxLength={30} autoComplete="off" />
-                <label>{t("fUid")}</label><input value={f.uid} onChange={set("uid")} inputMode="numeric" maxLength={14} autoComplete="off" />
-                <label>{t("fMob")}</label><input value={f.mob} onChange={set("mob")} inputMode="tel" maxLength={15} autoComplete="tel" placeholder="98XXXXXXXX" />
-                <button className="btn" disabled={closed} onClick={register}>{mine ? t("upd") : t("regBtn")} · {dShort}</button>
-                <div className={"msg " + (closed ? "er" : reg.cls)}>{cancelled ? t("canMsg") : full ? t("full") : reg.txt}</div>
-              </div>
-            )}
+              ) : (
+                <div className="row" style={{ paddingTop: 0 }}>
+                  <span className="mu">{t("optLogin")}</span>
+                  <button className="sm" id="loginBtn" onClick={login}>{t("loginBtn")}</button>
+                </div>
+              )}
+              {loginMsg && <div className="msg er">{loginMsg}</div>}
+              <label>{t("fTeam")}</label><input value={f.team} onChange={set("team")} maxLength={30} autoComplete="off" />
+              <label>{t("fIgn")}</label><input value={f.ign} onChange={set("ign")} maxLength={30} autoComplete="off" />
+              <label>{t("fUid")}</label><input value={f.uid} onChange={set("uid")} inputMode="numeric" maxLength={14} autoComplete="off" />
+              <label>{t("fMob")}</label><input value={f.mob} onChange={set("mob")} inputMode="tel" maxLength={15} autoComplete="tel" placeholder="98XXXXXXXX" />
+              <button className="btn" disabled={closed || (!user && !!mine)} onClick={register}>{mine ? (user ? t("upd") : t("regd")) : t("regBtn")} · {dShort}</button>
+              <div className={"msg " + (closed ? "er" : reg.cls)}>{cancelled ? t("canMsg") : full ? t("full") : reg.txt}</div>
+            </div>
           </section>
 
           {mine && (
