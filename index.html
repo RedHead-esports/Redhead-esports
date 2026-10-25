@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redhead eSports – Free Fire Daily Tournament</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600;700&display=swap">
+<meta name="description" content="Daily Free Fire tournament at 8 PM. 8 teams. Entry ₹234. Prize ₹950 / ₹600.">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#060914;--s1:#0d1328;--s2:#131b38;--tx:#eef2ff;--mu:#8e9ac0;--bd:#1f2b55;--rd:#ff2e44;--bl:#1e90ff;--ok:#22c55e;--gold:#ffc83d}
+
+:root[data-theme="dark"]{--bg:#060914;--s1:#0d1328;--s2:#131b38;--tx:#eef2ff;--mu:#8e9ac0;--bd:#1f2b55}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI","Noto Sans Devanagari",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--bd)}
+.hb{max-width:720px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.br{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}
+.br b{color:var(--rd)}
+.lg{width:34px;height:34px;border-radius:9px;background:var(--rd);color:#fff;display:grid;place-items:center;font-weight:900;overflow:hidden}
+.lg img{width:100%;height:100%;object-fit:cover}
+.lang{display:flex;background:var(--s2);border:1px solid var(--bd);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;color:var(--mu);padding:5px 10px;border-radius:99px;font-size:13px;font-weight:600;cursor:pointer}
+.lang button.on{background:var(--rd);color:#fff}
+main{max-width:720px;margin:0 auto;padding:16px}
+.hero{padding:34px 20px;border-radius:18px;text-align:center;background:radial-gradient(circle at 50% 0,#4a0a14,#12060a 70%);border:1px solid #3a1118;color:#fff}
+.hero h1{margin:6px 0 4px;font-size:30px;line-height:1.15}
+.hero h1 span{color:var(--rd)}
+.hero p{margin:4px 0;color:#cfcfd8}
+.chip{display:inline-block;margin-top:12px;padding:7px 16px;border-radius:99px;background:var(--rd);font-weight:700;font-size:14px}
+.sec{margin-top:18px}
+.sec>h2{margin:0 0 10px;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mu)}
+.card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.g3>div{background:var(--s2);border:1px solid var(--bd);border-radius:12px;padding:12px 4px}
+.g3 b{display:block;font-size:20px}.g3 small{color:var(--mu);font-size:13px}
+.g3 .gd b{color:var(--gold)}
+.bar{height:6px;border-radius:9px;background:var(--bd);overflow:hidden;margin-top:12px}.bar i{display:block;height:100%;background:var(--rd);width:0;transition:width .4s}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.steps li:last-child{border:0}
+.steps li::before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--rd);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+label{display:block;font-size:13px;color:var(--mu);margin:12px 0 5px;font-weight:600}
+input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:16px}
+input:focus{outline:2px solid var(--rd);outline-offset:0}
+.btn{display:block;width:100%;margin-top:14px;padding:13px;border:0;border-radius:10px;background:var(--rd);color:#fff;font-weight:700;font-size:16px;cursor:pointer;text-align:center;text-decoration:none}
+.btn:disabled{opacity:.5}
+.btn.wa{background:#25d366;color:#04260f}
+.btn.gh{background:var(--s2);color:var(--tx);border:1px solid var(--bd)}
+.lk{display:flex;gap:8px;margin-top:12px}.lk a{flex:1;text-align:center;padding:11px;border-radius:10px;border:1px solid var(--bd);color:var(--tx);text-decoration:none;font-weight:600;font-size:15px;background:var(--s2)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--bd)}.row:last-child{border:0}
+.pill{font-size:12px;padding:3px 9px;border-radius:99px;border:1px solid var(--bd);color:var(--mu);white-space:nowrap}.pill.ok{color:var(--ok);border-color:var(--ok)}
+.sm{padding:4px 9px;font-size:12px;border:1px solid var(--bd);background:none;color:var(--tx);border-radius:8px;margin-left:4px;cursor:pointer}
+.mu{color:var(--mu);font-size:14px}.msg{margin-top:10px;font-size:14px;min-height:20px}.er{color:var(--rd)}.go{color:var(--ok)}
+.hide{display:none!important}
+/* ===== GAMING THEME: blue + red ===== */
+body{font-family:Rajdhani,"Noto Sans Devanagari",Inter,system-ui,sans-serif;font-size:17px;font-weight:500;background:radial-gradient(900px 500px at 90% -10%,rgba(30,144,255,.22),transparent 60%),radial-gradient(800px 500px at -5% 12%,rgba(255,46,68,.18),transparent 60%),var(--bg);background-attachment:fixed}
+.br,.hero h1,.sec>h2,.g3 b,.chip,.btn{font-family:Orbitron,Rajdhani,sans-serif}
+.br{font-size:14px;font-weight:800}
+.br b{color:var(--rd);text-shadow:0 0 12px rgba(255,46,68,.7)}
+header{background:rgba(6,9,20,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,var(--rd),var(--bl)) 1}
+body::before{background:rgba(6,9,20,.9)}
+.lg{background:linear-gradient(135deg,var(--rd),var(--bl));box-shadow:0 0 14px rgba(30,144,255,.6)}
+.lang button.on{background:linear-gradient(90deg,var(--rd),var(--bl));box-shadow:0 0 10px rgba(30,144,255,.5)}
+.hero{position:relative;overflow:hidden;padding:38px 18px;border-radius:12px;background:linear-gradient(135deg,#34050f 0%,#0a1233 55%,#0b2a66 100%);border:1px solid var(--bl);box-shadow:0 0 30px rgba(30,144,255,.3),inset 0 0 50px rgba(255,46,68,.15)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px);pointer-events:none}
+.hero h1{font-size:clamp(24px,7.5vw,36px);font-weight:800;letter-spacing:1.5px;color:#fff;text-shadow:0 0 18px rgba(30,144,255,.9)}
+.hero h1 span{color:var(--rd);text-shadow:0 0 18px rgba(255,46,68,.95)}
+.chip{font-size:13px;letter-spacing:1px;background:linear-gradient(90deg,var(--rd),#ff6a3d);animation:pls 2s infinite}
+@keyframes pls{0%,100%{box-shadow:0 0 0 0 rgba(255,46,68,.6)}50%{box-shadow:0 0 0 10px rgba(255,46,68,0)}}
+.sec>h2{font-size:12px;color:var(--bl);text-shadow:0 0 10px rgba(30,144,255,.6)}
+.sec>h2::before{content:"▸ ";color:var(--rd)}
+.card{background:linear-gradient(180deg,var(--s1),var(--s2));border:1px solid var(--bd);border-left:3px solid var(--rd);border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.4)}
+.g3>div{border:1px solid var(--bd);border-top:2px solid var(--bl);border-radius:8px;background:rgba(30,144,255,.07)}
+.g3 b{font-size:18px}
+.g3 .gd{border-top-color:var(--gold);background:rgba(255,200,61,.08)}
+.bar{height:8px}.bar i{background:linear-gradient(90deg,var(--bl),var(--rd));box-shadow:0 0 10px rgba(255,46,68,.6)}
+.steps li::before{background:linear-gradient(135deg,var(--bl),var(--rd));box-shadow:0 0 10px rgba(30,144,255,.5)}
+input{background:#070b1c;border-color:var(--bd)}
+input:focus{outline:2px solid var(--bl);box-shadow:0 0 14px rgba(30,144,255,.5)}
+.btn{font-size:14px;letter-spacing:1px;text-transform:uppercase;border-radius:8px;background:linear-gradient(90deg,var(--rd),#ff6a3d);box-shadow:0 0 20px rgba(255,46,68,.45);transition:transform .1s}
+.btn:active{transform:scale(.97)}
+#loginBtn{background:linear-gradient(90deg,var(--bl),#58a8ff);box-shadow:0 0 20px rgba(30,144,255,.55)}
+.btn.wa{background:linear-gradient(90deg,#1fbf5b,#2be07a);color:#032812;box-shadow:0 0 18px rgba(37,211,102,.4)}
+.lk a{background:rgba(30,144,255,.1);border-color:var(--bl);font-weight:700}
+.lk a:first-child{background:rgba(255,46,68,.12);border-color:var(--rd)}
+.pill{border-radius:6px}
+.row{border-bottom-color:var(--bd)}
+@media (prefers-reduced-motion:reduce){.chip{animation:none}}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:26px 0 8px}footer a{color:var(--rd);text-decoration:none}
+</style></head><body>
+
+<header><div class="hb">
+  <div class="br"><div class="lg" id="logo">R</div><span>REDHEAD <b>eSPORTS</b></span></div>
+  <div class="lang" id="lang"><button data-l="en">English</button><button data-l="hi">हिन्दी</button><button data-l="hl">Hinglish</button><button id="snd" aria-label="Sound">🔊</button></div>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="mu" style="color:#cfcfd8" data-i="game"></div>
+  <h1>REDHEAD <span>eSPORTS</span></h1>
+  <p data-i="sub"></p>
+  <p class="mu" style="color:#a9a9b6"><span data-i="owner"></span>: Rhx Andy</p>
+  <span class="chip" data-i="daily"></span>
+</section>
+
+<section class="sec"><div class="card">
+  <div class="g3">
+    <div><b>8</b><small data-i="teams"></small></div>
+    <div><b>8 PM</b><small data-i="every"></small></div>
+    <div><b id="left">8</b><small data-i="left"></small></div>
+  </div>
+  <div class="bar"><i id="fill"></i></div>
+  <div class="mu" style="margin-top:10px"><span data-i="today"></span> <b id="dt"></b></div>
+</div></section>
+
+<section class="sec"><h2 data-i="prizeH"></h2><div class="card"><div class="g3">
+  <div><b>₹234</b><small data-i="entry"></small></div>
+  <div class="gd"><b>₹950</b><small data-i="p1"></small></div>
+  <div class="gd"><b>₹600</b><small data-i="p2"></small></div>
+</div></div></section>
+
+<section class="sec"><h2 data-i="fmtH"></h2><div class="card">
+  <ol class="steps"><li data-i="r1"></li><li data-i="r2"></li><li data-i="r3"></li></ol>
+  <p class="mu" style="margin:12px 0 0" data-i="live"></p>
+  <div class="lk"><a href="https://youtube.com/@rhx_andy" target="_blank" rel="noopener">▶ YouTube</a><a href="https://www.instagram.com/rhxesports_" target="_blank" rel="noopener">◎ Instagram</a></div>
+</div></section>
+
+<section class="sec"><h2 data-i="regH"></h2>
+  <div class="card" id="loginCard">
+    <p class="mu" style="margin:0" data-i="loginTxt"></p>
+    <button class="btn" id="loginBtn" data-i="loginBtn"></button>
+    <div class="msg er" id="loginMsg"></div>
+  </div>
+  <div class="card hide" id="regCard">
+    <div class="row" style="padding-top:0"><span class="mu" id="who"></span><button class="sm" id="outBtn" data-i="logout"></button></div>
+    <label data-i="fTeam"></label><input id="team" maxlength="30" autocomplete="off">
+    <label data-i="fIgn"></label><input id="ign" maxlength="30" autocomplete="off">
+    <label data-i="fUid"></label><input id="uid" inputmode="numeric" maxlength="14" autocomplete="off">
+    <label data-i="fMob"></label><input id="mob" inputmode="tel" maxlength="15" autocomplete="tel" placeholder="98XXXXXXXX">
+    <button class="btn" id="regBtn"></button>
+    <div class="msg" id="regMsg"></div>
+  </div>
+</section>
+
+<section class="sec hide" id="payS"><h2 data-i="payH"></h2><div class="card">
+  <p class="mu" style="margin:0" data-i="payTxt"></p>
+  <button class="btn wa" id="waBtn" data-i="payBtn"></button>
+  <p style="margin:12px 0 0"><span class="pill" id="payStatus"></span></p>
+</div></section>
+
+<section class="sec"><h2 data-i="listH"></h2><div class="card" id="list"></div></section>
+
+<section class="sec hide" id="adm"><h2 data-i="admH"></h2><div class="card">
+  <div class="g3"><div><b id="aReg">0</b><small data-i="aReg"></small></div><div><b id="aConf">0</b><small data-i="aConf"></small></div><div class="gd"><b id="aCol">₹0</b><small data-i="aCol"></small></div></div>
+  <div id="alist" style="margin-top:10px"></div>
+  <button class="btn gh" id="cpy" data-i="aCopy"></button>
+</div></section>
+
+<footer>© Redhead eSports · Rhx Andy<br><a href="https://youtube.com/@rhx_andy" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rhxesports_" target="_blank" rel="noopener">Instagram</a></footer>
+</main>
+
+<script type="module">
+/* ====== SETTINGS ====== */
+const OWNER_WA    = "916206549468";
+const OWNER_EMAIL = "777mrsevou@gmail.com";   // sirf is Gmail se login karne par Admin panel milega
+const LOGO_URL    = "";                         // logo ka link/file (e.g. "logo.png"), khali = "R" badge
+const SUPABASE_URL = "";       // Supabase > Project Settings > API > Project URL
+const SUPABASE_ANON_KEY = "";  // Supabase > Project Settings > API > anon public key
+const MAX = 8;
+
+/* ====== LANGUAGES ====== */
+const T = {
+en:{admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collected",aCopy:"Copy confirmed list",copied:"Copied ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Every Night · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots left",today:"Today's match:",
+ prizeH:"Entry & Prize Pool",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
+ r1:"<b>Round 1:</b> 8 teams play 4 matches (4 vs 4) → 4 teams advance.",r2:"<b>Semi Final:</b> 4 teams play 2 matches (2 vs 2) → 2 teams advance.",r3:"<b>Final:</b> the last 2 teams fight for the title.",
+ live:"Daily matches. Streamed LIVE on YouTube — occasionally I may not be able to go live.",
+ regH:"Register",loginTxt:"Sign in with your Google account to register your team.",loginBtn:"Continue with Google",logout:"Logout",
+ fTeam:"Team Name",fIgn:"Leader's Free Fire Name (IGN)",fUid:"Free Fire UID",fMob:"Mobile Number (WhatsApp)",regBtn:"Register Team",upd:"Update Details",
+ payH:"Payment",payTxt:"Entry fee ₹234. Tap the button to message us on WhatsApp — payment details will be shared there. Your slot is confirmed after payment.",payBtn:"Message on WhatsApp",
+ pend:"Payment pending",paid:"Payment confirmed ✓",paidS:"Paid ✓",pendS:"Pending",listH:"Today's Confirmed Teams",none:"No confirmed teams yet.",
+ full:"All 8 slots for today are full. Try again tomorrow!",bad:"Please fill all details correctly (UID: numbers only).",ok:"Registered! WhatsApp is opening — just press Send.",
+ as:"Signed in as",adm:"Admin",mark:"Mark paid",unm:"Unpaid",delq:"Remove this team?",err:"Something went wrong: ",
+ needLogin:"Login is not available here yet.",wa:"Hi Redhead eSports! I registered for today's 8 PM Free Fire tournament.\nTeam: {t}\nIGN: {i}\nUID: {u}\nMobile: {m}\nEntry ₹234 – please share payment details."},
+hi:{admH:"एडमिन पैनल",aReg:"रजिस्टर्ड",aConf:"कन्फर्म",aCol:"कलेक्शन",aCopy:"कन्फर्म लिस्ट कॉपी करें",copied:"कॉपी हो गया ✓",game:"फ्री फायर",sub:"डेली फ्री फायर टूर्नामेंट",owner:"ओनर",daily:"रोज़ रात · 8:00 बजे",teams:"टीमें",every:"रोज़",left:"खाली स्लॉट",today:"आज का मैच:",
+ prizeH:"एंट्री और इनाम",entry:"एंट्री / टीम",p1:"पहला इनाम",p2:"दूसरा इनाम",fmtH:"मैच का फॉर्मेट",
+ r1:"<b>राउंड 1:</b> 8 टीमें 4 मैच खेलेंगी (4 vs 4) → 4 टीमें आगे बढ़ेंगी।",r2:"<b>सेमी फाइनल:</b> 4 टीमें 2 मैच खेलेंगी (2 vs 2) → 2 टीमें आगे बढ़ेंगी।",r3:"<b>फाइनल:</b> आखिरी 2 टीमें खिताब के लिए भिड़ेंगी।",
+ live:"मैच रोज़ होंगे। YouTube पर LIVE दिखाया जाएगा — कभी-कभी लाइव नहीं कर पाऊँगा।",
+ regH:"रजिस्टर करें",loginTxt:"अपनी टीम रजिस्टर करने के लिए Google अकाउंट से लॉगिन करें।",loginBtn:"Google से जारी रखें",logout:"लॉगआउट",
+ fTeam:"टीम का नाम",fIgn:"लीडर का फ्री फायर नाम (IGN)",fUid:"फ्री फायर UID",fMob:"मोबाइल नंबर (WhatsApp)",regBtn:"टीम रजिस्टर करें",upd:"डिटेल अपडेट करें",
+ payH:"पेमेंट",payTxt:"एंट्री फीस ₹234। नीचे बटन दबाकर WhatsApp पर मैसेज करें, पेमेंट की जानकारी वहीं मिलेगी। पेमेंट के बाद आपका स्लॉट पक्का होगा।",payBtn:"WhatsApp पर मैसेज करें",
+ pend:"पेमेंट बाकी है",paid:"पेमेंट कन्फर्म ✓",paidS:"पेड ✓",pendS:"बाकी",listH:"आज की कन्फर्म टीमें",none:"अभी कोई टीम कन्फर्म नहीं हुई।",
+ full:"आज के सभी 8 स्लॉट भर चुके हैं। कल फिर कोशिश करें!",bad:"कृपया सारी जानकारी सही भरें (UID में सिर्फ़ नंबर)।",ok:"रजिस्टर हो गया! WhatsApp खुल रहा है — बस Send दबाएँ।",
+ as:"लॉगिन:",adm:"एडमिन",mark:"पेड करें",unm:"अनपेड",delq:"यह टीम हटाएँ?",err:"कुछ गड़बड़ हुई: ",
+ needLogin:"यहाँ अभी लॉगिन उपलब्ध नहीं है।",wa:"नमस्ते Redhead eSports! मैंने आज रात 8 बजे के Free Fire टूर्नामेंट के लिए रजिस्टर किया है।\nटीम: {t}\nIGN: {i}\nUID: {u}\nमोबाइल: {m}\nएंट्री ₹234 – कृपया पेमेंट की जानकारी भेजें।"},
+hl:{admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collection",aCopy:"Confirmed list copy karo",copied:"Copy ho gaya ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Roz Raat · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots bache",today:"Aaj ka match:",
+ prizeH:"Entry aur Prize",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
+ r1:"<b>Round 1:</b> 8 teams 4 match khelengi (4 vs 4) → 4 teams aage.",r2:"<b>Semi Final:</b> 4 teams 2 match khelengi (2 vs 2) → 2 teams aage.",r3:"<b>Final:</b> aakhri 2 teams title ke liye ladengi.",
+ live:"Daily match hoga. YouTube pe LIVE aaunga — kabhi kabhi live nahi kar paaunga.",
+ regH:"Register Karo",loginTxt:"Team register karne ke liye apne Google account se login karo.",loginBtn:"Google se Login",logout:"Logout",
+ fTeam:"Team ka Naam",fIgn:"Leader ka Free Fire Name (IGN)",fUid:"Free Fire UID",fMob:"Mobile Number (WhatsApp)",regBtn:"Team Register Karo",upd:"Details Update Karo",
+ payH:"Payment",payTxt:"Entry fee ₹234. Niche button dabake WhatsApp pe message bhejo, payment details wahin milengi. Payment ke baad slot pakka hoga.",payBtn:"WhatsApp pe Message Bhejo",
+ pend:"Payment pending",paid:"Payment confirm ✓",paidS:"Paid ✓",pendS:"Pending",listH:"Aaj ki Confirmed Teams",none:"Abhi koi team confirm nahi hui.",
+ full:"Aaj ke saare 8 slots full hain. Kal try karo!",bad:"Saari details sahi bharo (UID me sirf numbers).",ok:"Register ho gaya! WhatsApp khul raha hai — bas Send dabao.",
+ as:"Login:",adm:"Admin",mark:"Mark paid",unm:"Unpaid",delq:"Ye team hata dein?",err:"Kuch gadbad hui: ",
+ needLogin:"Yahan abhi login available nahi hai.",wa:"Hi Redhead eSports! Maine aaj 8 PM Free Fire tournament ke liye register kiya hai.\nTeam: {t}\nIGN: {i}\nUID: {u}\nMobile: {m}\nEntry ₹234 – payment details bhejiye."}
+};
+let L = "en"; try{ L = localStorage.getItem("lang") || "en"; }catch(e){}
+const t = k => (T[L]||T.en)[k];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const dkey = () => { const d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); };
+const loc = {en:"en-IN",hi:"hi-IN",hl:"en-IN"};
+
+/* ====== SFX (koi audio file nahi chahiye, browser khud banata hai) ====== */
+let muted=false; try{ muted=localStorage.getItem("mute")==="1"; }catch(e){}
+let ac=null;
+function tone(f,d,type,v,at){ if(muted) return; try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const o=ac.createOscillator(),g=ac.createGain(),s=ac.currentTime+(at||0); o.type=type||"sine"; o.frequency.value=f; g.gain.setValueAtTime(v||.08,s); g.gain.exponentialRampToValueAtTime(.0001,s+d); o.connect(g); g.connect(ac.destination); o.start(s); o.stop(s+d); }catch(e){} }
+const sfx={click:()=>tone(520,.07,"square",.03),ok:()=>{tone(523,.12,"triangle",.1,0);tone(659,.12,"triangle",.1,.12);tone(784,.3,"triangle",.1,.24);},err:()=>tone(180,.28,"sawtooth",.07)};
+$("snd").textContent=muted?"🔇":"🔊";
+$("snd").onclick=()=>{ muted=!muted; try{localStorage.setItem("mute",muted?"1":"0");}catch(e){} $("snd").textContent=muted?"🔇":"🔊"; };
+document.addEventListener("click",e=>{ if(e.target.closest("button,.lk a")&&e.target.id!=="snd") sfx.click(); });
+
+let be=null, user=null, rows=[], mine=null, lastMsg=null;
+
+function applyLang(){
+  document.documentElement.lang = L==="hi"?"hi":"en";
+  document.querySelectorAll("[data-i]").forEach(e=>{ e.innerHTML = t(e.dataset.i); });
+  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
+  $("dt").textContent = new Date().toLocaleDateString(loc[L],{weekday:"long",day:"numeric",month:"long"})+" · 8:00 PM";
+  if(user) $("who").textContent = t("as")+" "+(user.name||user.email||"Player")+(user.isOwner?" · "+t("adm"):"");
+  render();
+}
+$("lang").onclick = e => { const l=e.target.dataset.l; if(!l) return; L=l; try{localStorage.setItem("lang",l);}catch(x){} applyLang(); };
+
+if(LOGO_URL){ $("logo").innerHTML='<img alt="Redhead eSports" src="'+esc(LOGO_URL)+'">'; }
+
+function render(){
+  const d = dkey();
+  const teams = rows.filter(x=>x.date===d).sort((a,b)=>(a.at||0)-(b.at||0));
+  mine = user ? teams.find(x=>x.id===user.id+"_"+d) || null : null;
+  const conf = teams.filter(x=>x.paid);
+  $("left").textContent = Math.max(0,MAX-conf.length);
+  $("fill").style.width = Math.min(100,conf.length/MAX*100)+"%";
+  $("list").innerHTML = conf.length ? conf.map((x,i)=>
+    '<div class="row"><span>'+(i+1)+'. <b>'+esc(x.team)+'</b> <span class="mu">'+esc(x.ign)+'</span></span><span><span class="pill '+(x.paid?"ok":"")+'">'+(x.paid?t("paidS"):t("pendS"))+'</span>'+
+    '</span></div>'
+  ).join("") : '<div class="mu">'+t("none")+'</div>';
+  $("payS").classList.toggle("hide",!mine);
+  $("payStatus").textContent = mine ? (mine.paid?t("paid"):t("pend")) : "";
+  $("payStatus").className = "pill"+(mine&&mine.paid?" ok":"");
+  $("regBtn").textContent = mine?t("upd"):t("regBtn");
+  if(mine && !$("team").value){ $("team").value=mine.team; $("ign").value=mine.ign; }
+  const full = conf.length>=MAX && !mine;
+  $("regBtn").disabled = full;
+  if(full) say("regMsg",t("full"),"er"); else if($("regMsg").dataset.full){ say("regMsg","",""); }
+  $("regMsg").dataset.full = full?"1":"";
+  const isA=!!(user&&user.isOwner);
+  $("adm").classList.toggle("hide",!isA);
+  if(isA){
+    $("aReg").textContent=teams.length; $("aConf").textContent=conf.length; $("aCol").textContent="₹"+(conf.length*234);
+    $("alist").innerHTML = teams.length ? teams.map((x,i)=>'<div class="row"><span>'+(i+1)+'. <b>'+esc(x.team)+'</b> <span class="mu">'+esc(x.ign)+'</span></span><span><span class="pill '+(x.paid?"ok":"")+'">'+(x.paid?t("paidS"):t("pendS"))+'</span><button class="sm" data-p="'+esc(x.id)+'" data-v="'+(x.paid?0:1)+'">'+(x.paid?t("unm"):t("mark"))+'</button><button class="sm" data-d="'+esc(x.id)+'">✕</button></span></div>').join("") : '<div class="mu">'+t("none")+'</div>';
+  }
+}
+function say(id,txt,cls){ const m=$(id); m.textContent=txt; m.className="msg "+cls; }
+
+$("list").onclick = $("alist").onclick = async e => {
+  const p=e.target.dataset.p, d=e.target.dataset.d;
+  try{
+    if(p) await be.patch(p,{paid:e.target.dataset.v==="1"});
+    if(d && confirm(t("delq"))) await be.del(d);
+  }catch(err){ alert(t("err")+(err.message||err.code)); }
+};
+
+$("regBtn").onclick = async () => {
+  const team=$("team").value.trim(), ign=$("ign").value.trim(), uid=$("uid").value.trim(), mob=$("mob").value.replace(/\D/g,"");
+  if(!team||!ign||!/^\d{6,14}$/.test(uid)||mob.length<10||mob.length>13){ say("regMsg",t("bad"),"er"); sfx.err(); return; }
+  try{
+    const d=dkey();
+    await be.save(user.id+"_"+d,{team,ign,date:d,paid:mine?!!mine.paid:false,at:mine?mine.at:Date.now()});
+    say("regMsg",t("ok"),"go");
+    sfx.ok();
+    openWA();
+  }catch(err){ say("regMsg",t("err")+(err.message||err.code),"er"); }
+};
+
+function openWA(){
+  const msg = t("wa").replace("{t}",$("team").value.trim()||(mine&&mine.team)||"").replace("{i}",$("ign").value.trim()||(mine&&mine.ign)||"").replace("{u}",$("uid").value.trim()||"-").replace("{m}",$("mob").value.trim()||"-");
+  const url="https://wa.me/"+OWNER_WA+"?text="+encodeURIComponent(msg);
+  const w=window.open(url,"_blank");
+  if(!w){ try{ location.href=url; }catch(e){} }
+}
+$("waBtn").onclick = openWA;
+$("loginBtn").onclick = async () => { try{ await be.login(); }catch(err){ say("loginMsg",t("err")+(err.message||err.code),"er"); } };
+$("outBtn").onclick = () => be.logout();
+$("cpy").onclick = async () => {
+  const d=dkey(), c=rows.filter(x=>x.date===d&&x.paid).sort((a,b)=>(a.at||0)-(b.at||0));
+  const txt="Redhead eSports – "+d+"\n"+c.map((x,i)=>(i+1)+". "+x.team+" ("+x.ign+")").join("\n");
+  try{ await navigator.clipboard.writeText(txt); $("cpy").textContent=t("copied"); setTimeout(()=>{$("cpy").textContent=t("aCopy");},1500); }catch(e){ prompt("Copy:",txt); }
+};
+
+function onUser(u){
+  user=u;
+  $("loginCard").classList.toggle("hide",!!u);
+  $("regCard").classList.toggle("hide",!u);
+  applyLang();
+}
+
+/* ====== BACKENDS ====== */
+async function claudeBackend(){
+  if(!window.claude) return null;
+  const U=await claude.use("user"), db=await claude.use("db");
+  if(!U||!db) return {off:true};
+  const me=await U.me(), id=await U.id(), owner=await U.isOwner();
+  return { auth(cb){ cb({id,name:me.name,email:me.email,isOwner:owner}); },
+    login(){}, logout(){}, teams(cb,er){ return db.collection("teams").onSnapshot(s=>cb(s.docs.map(d=>({id:d.id,...d.data()}))),er); },
+    save:(i,d)=>db.collection("teams").doc(i).set(d), patch:(i,d)=>db.collection("teams").doc(i).update(d), del:i=>db.collection("teams").doc(i).delete() };
+}
+async function supabaseBackend(){
+  if(!SUPABASE_URL||!SUPABASE_ANON_KEY) return null;
+  const { createClient } = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm");
+  const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const fail = r => { if(r.error) throw r.error; return r; };
+  return {
+    auth(cb){
+      const f = s => { const u=s&&s.user; cb(u?{id:u.id,name:(u.user_metadata&&u.user_metadata.full_name)||"",email:u.email,isOwner:u.email===OWNER_EMAIL}:null); };
+      sb.auth.getSession().then(r=>f(r.data.session));
+      sb.auth.onAuthStateChange((_e,s)=>f(s));
+    },
+    login:()=>sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}}),
+    logout:()=>sb.auth.signOut(),
+    teams(cb,er){
+      const load=async()=>{ const r=await sb.from("teams").select("*").eq("date",dkey()); if(r.error) er(r.error); else cb(r.data); };
+      load(); sb.channel("teams").on("postgres_changes",{event:"*",schema:"public",table:"teams"},load).subscribe(); setInterval(load,20000);
+    },
+    save:async(id,d)=>fail(await sb.from("teams").upsert({id,...d})),
+    patch:async(id,d)=>fail(await sb.from("teams").update(d).eq("id",id)),
+    del:async id=>fail(await sb.from("teams").delete().eq("id",id))
+  };
+}
+
+applyLang();
+try{
+  be = await claudeBackend() || await supabaseBackend();
+  if(!be || be.off){ say("loginMsg",t("needLogin"),"er"); }
+  else { be.auth(onUser); be.teams(s=>{rows=s;render();},e=>say("regMsg",t("err")+(e.code||""),"er")); }
+}catch(e){ say("loginMsg",t("err")+(e.message||""),"er"); }
+</script></body></html>
