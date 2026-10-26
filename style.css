@@ -200,3 +200,22 @@ footer a{color:var(--rd)!important}
 select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:16px}
 .pair{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin-top:8px}
 .pair b{color:var(--rd);font-family:"Bebas Neue",sans-serif;font-size:18px}
+
+/* ===== ADMIN FOLDERS + PODIUM ===== */
+.atabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;margin-top:6px;-webkit-overflow-scrolling:touch}
+.atab{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--s2);color:var(--mu);cursor:pointer;font-family:Rajdhani,"Noto Sans Devanagari",sans-serif;font-size:15px;font-weight:700;white-space:nowrap}
+.atab.on{border-color:var(--bl);color:var(--bl);background:var(--s1)}
+.vsx{color:var(--rd);font-family:"Bebas Neue",sans-serif;font-size:15px}
+.podium{display:grid;gap:10px;margin-top:16px}
+.pd{text-align:center;padding:18px 14px;border-radius:14px;background:var(--s2);border:1px solid var(--bd)}
+.pd small{display:block;color:var(--mu);font-family:"Bebas Neue",sans-serif;letter-spacing:3px;font-size:16px}
+.pd h3{margin:4px 0 2px;font-family:"Bebas Neue",Rajdhani,sans-serif;font-weight:400;font-size:34px;letter-spacing:1px;color:var(--tx)}
+.pd .pdi{font-size:44px;line-height:1.1}
+.pd .mlabel{margin-top:12px;color:var(--mu);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+.pd .money{font-family:"Bebas Neue",sans-serif;font-size:60px;line-height:1;letter-spacing:2px}
+.pd.first{border:2px solid var(--bl);background:linear-gradient(180deg,#2e2a16,var(--s2))!important}
+.pd.first h3{font-size:40px;color:var(--bl)}
+.pd.first .money{color:var(--bl)}
+.pd.second{border-color:#8d949c}
+.pd.second .money{font-size:42px;color:#d4d8de}
+.pd.second h3{font-size:28px}
