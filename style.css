@@ -219,3 +219,13 @@ select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);bac
 .pd.second{border-color:#8d949c}
 .pd.second .money{font-size:42px;color:#d4d8de}
 .pd.second h3{font-size:28px}
+
+/* ===== DAY STATUS (3 options) ===== */
+.bn.tb{border-color:var(--bl)!important;color:var(--bl)!important}
+.opt3{display:grid;gap:8px;margin-top:6px}
+.opt{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:12px;border:1px solid var(--bd);background:var(--s2);color:var(--mu);cursor:pointer;text-align:left;font-family:Rajdhani,"Noto Sans Devanagari",sans-serif;font-size:16px}
+.opt span{font-size:22px}
+.opt b{font-weight:700}
+.opt.on.cancel{border-color:var(--rd);color:var(--rd);background:var(--s1)}
+.opt.on.tbd{border-color:var(--bl);color:var(--bl);background:var(--s1)}
+.opt.on.on{border-color:#2fbf71;color:#2fbf71;background:var(--s1)}

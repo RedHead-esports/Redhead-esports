@@ -10,12 +10,12 @@ const SUPABASE_URL = "https://exkhfrwhxbbjqbauthlx.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV4a2hmcndoeGJianFiYXV0aGx4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5MTk3MzQsImV4cCI6MjEwODQ5NTczNH0.4a4TnxnNLP6COxGHkqraBZD7K-GClxfPfkG-48XKqdg";
 const MAX = 8;
 const MAX_PER = 20; // ek ID se ek din me max requests (spam se bachne ke liye)     // ek din me teams
-const DAYS = 5;    // kitne din aage tak registration (aaj se shuru)
+const DAYS = 10;    // kitne din aage tak registration (aaj se shuru)
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /* ====== LANGUAGES ====== */
 const T = {
-en:{aTT:"Teams",aTD:"Draw",aTS:"Schedule",aTR:"Results",aTC:"Day control",needDraw:"Do the draw first (Draw tab).",prizeL:"Prize money",drawStat:"Confirmed teams",nMatch:"Match",matchH:"Today's Matches",matchN:"Match",winOf:"Winner of",stNext:"NEXT",stUp:"Upcoming",stDn:"Done",noSched:"Match schedule will appear here once the admin announces the draw.",gapNote:"15–20 min break between matches.",schedH:"Match Schedule",startL:"First match starts at",gapL:"Gap between matches (min)",pairH:"Round 1 pairings (you decide)",manualBtn:"Manual order (no shuffle)",cfmSwap:"Changing pairings will clear winners. Continue?",reqNote:"Your registration is a request. The admin decides how many of your teams are accepted. A team is confirmed only after approval and payment.",maxTeams:"Request limit reached (20). Please contact admin on WhatsApp.",myCnt:"Your teams",editB:"Edit",cancelEdit:"Cancel edit",rbH:"Rulebook",regClosed:"Registration for today closed at 6:00 PM. Pick another day.",nHome:"Home",nDash:"Dashboard",nHist:"History",nRules:"Rules",nAdmin:"Admin",dashH:"Dashboard",stDone:"Tournaments",stTeams:"Teams played",stPrize:"Prize paid",upH:"Upcoming Days",myH:"My Registrations",noMine:"You have not registered yet.",histH:"Tournament History",noHist:"No tournaments yet. Results appear here after the draw.",inProg:"In progress",details:"View bracket",hide:"Hide",rulesH:"Rules",admDays:"Select Day",admOnly:"Admin only. Login with the owner Google account.",postersH:"Posters",soon:"Poster coming soon",optLogin:"Login is optional",regd:"Registered ✓",tdy:"Today",fullTag:"FULL",mDay:"Match day:",daysH:"Pick Match Day",canH:"Match Cancelled",canMsg:"Registration is closed for this day.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"The draw will appear here once all 8 teams are confirmed.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Draw Teams (Random)",redrawBtn:"🎲 Draw Again",resetDraw:"Reset draw",drawNeed:"Draw unlocks when 8 teams are confirmed.",shuf:"Shuffling…",cancelH:"Cancel / Reopen this day",notePh:"Reason (everyone will see this)",cancelBtn:"Cancel this day's match",reopenBtn:"Reopen this day",cfmRedraw:"Draw again? Current winners will be cleared.",cfmCancel:"Cancel this day's match? Everyone will see it.",cfmReset:"Reset the draw?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collected",aCopy:"Copy confirmed list",copied:"Copied ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Every Night · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots left",today:"Today's match:",
+en:{statusH:"Match status for this day",stCancel:"Match cancelled (will not happen)",stTbd:"Not decided",stOn:"Match will happen",tbdH:"Match not decided yet",tbdMsg:"Registration opens once the admin confirms the match for this day.",tbdS:"Not decided",tbdReg:"Registration is closed until the match is confirmed.",aTT:"Teams",aTD:"Draw",aTS:"Schedule",aTR:"Results",aTC:"Day control",needDraw:"Do the draw first (Draw tab).",prizeL:"Prize money",drawStat:"Confirmed teams",nMatch:"Match",matchH:"Today's Matches",matchN:"Match",winOf:"Winner of",stNext:"NEXT",stUp:"Upcoming",stDn:"Done",noSched:"Match schedule will appear here once the admin announces the draw.",gapNote:"15–20 min break between matches.",schedH:"Match Schedule",startL:"First match starts at",gapL:"Gap between matches (min)",pairH:"Round 1 pairings (you decide)",manualBtn:"Manual order (no shuffle)",cfmSwap:"Changing pairings will clear winners. Continue?",reqNote:"Your registration is a request. The admin decides how many of your teams are accepted. A team is confirmed only after approval and payment.",maxTeams:"Request limit reached (20). Please contact admin on WhatsApp.",myCnt:"Your teams",editB:"Edit",cancelEdit:"Cancel edit",rbH:"Rulebook",regClosed:"Registration for today closed at 6:00 PM. Pick another day.",nHome:"Home",nDash:"Dashboard",nHist:"History",nRules:"Rules",nAdmin:"Admin",dashH:"Dashboard",stDone:"Tournaments",stTeams:"Teams played",stPrize:"Prize paid",upH:"Upcoming Days",myH:"My Registrations",noMine:"You have not registered yet.",histH:"Tournament History",noHist:"No tournaments yet. Results appear here after the draw.",inProg:"In progress",details:"View bracket",hide:"Hide",rulesH:"Rules",admDays:"Select Day",admOnly:"Admin only. Login with the owner Google account.",postersH:"Posters",soon:"Poster coming soon",optLogin:"Login is optional",regd:"Registered ✓",tdy:"Today",fullTag:"FULL",mDay:"Match day:",daysH:"Pick Match Day",canH:"Match Cancelled",canMsg:"Registration is closed for this day.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"The draw will appear here once all 8 teams are confirmed.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Draw Teams (Random)",redrawBtn:"🎲 Draw Again",resetDraw:"Reset draw",drawNeed:"Draw unlocks when 8 teams are confirmed.",shuf:"Shuffling…",cancelH:"Cancel / Reopen this day",notePh:"Reason (everyone will see this)",cancelBtn:"Cancel this day's match",reopenBtn:"Reopen this day",cfmRedraw:"Draw again? Current winners will be cleared.",cfmCancel:"Cancel this day's match? Everyone will see it.",cfmReset:"Reset the draw?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collected",aCopy:"Copy confirmed list",copied:"Copied ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Every Night · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots left",today:"Today's match:",
  prizeH:"Entry & Prize Pool",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
  r1:"<b>Round 1:</b> 8 teams play 4 matches (4 vs 4) → 4 teams advance.",r2:"<b>Semi Final:</b> 4 teams play 2 matches (2 vs 2) → 2 teams advance.",r3:"<b>Final:</b> the last 2 teams fight for the title.",
  live:"Daily matches. Streamed LIVE on YouTube — occasionally I may not be able to go live.",
@@ -26,7 +26,7 @@ en:{aTT:"Teams",aTD:"Draw",aTS:"Schedule",aTR:"Results",aTC:"Day control",needDr
  full:"All 8 slots for this day are full. Pick another day!",bad:"Please fill all details correctly (UID: numbers only).",ok:"Registered! WhatsApp is opening — just press Send.",
  as:"Signed in as",adm:"Admin",mark:"Confirm ✓",unm:"Unconfirm",delq:"Remove this team?",err:"Something went wrong: ",
  needLogin:"Login is not available here yet.",wa:"Hi Redhead eSports! I registered for the 8 PM Free Fire tournament.\nDate: {d}\nTeam: {t}\nIGN: {i}\nUID: {u}\nMobile: {m}\nEntry ₹234 – please share payment details."},
-hi:{aTT:"टीमें",aTD:"ड्रॉ",aTS:"शेड्यूल",aTR:"नतीजे",aTC:"दिन कंट्रोल",needDraw:"पहले ड्रॉ करें (ड्रॉ टैब में)।",prizeL:"इनाम राशि",drawStat:"कन्फर्म टीमें",nMatch:"मैच",matchH:"आज के मैच",matchN:"मैच",winOf:"विजेता:",stNext:"अगला",stUp:"आने वाला",stDn:"खत्म",noSched:"एडमिन के ड्रॉ घोषित करते ही मैच का शेड्यूल यहाँ दिखेगा।",gapNote:"हर मैच के बीच 15–20 मिनट का ब्रेक।",schedH:"मैच शेड्यूल",startL:"पहला मैच शुरू होगा",gapL:"मैचों के बीच गैप (मिनट)",pairH:"राउंड 1 की जोड़ियाँ (आप तय करें)",manualBtn:"मैनुअल क्रम (बिना शफल)",cfmSwap:"जोड़ियाँ बदलने पर विजेता हट जाएँगे। जारी रखें?",reqNote:"आपका रजिस्ट्रेशन एक रिक्वेस्ट है। आपकी कितनी टीमें लेनी हैं, यह एडमिन तय करेगा। भुगतान और अप्रूवल के बाद ही टीम कन्फर्म होगी।",maxTeams:"रिक्वेस्ट की सीमा (20) पूरी हो गई। एडमिन को WhatsApp करें।",myCnt:"आपकी टीमें",editB:"बदलें",cancelEdit:"बदलाव रद्द करें",rbH:"नियम पुस्तिका",regClosed:"आज का रजिस्ट्रेशन शाम 6 बजे बंद हो गया। कोई और दिन चुनें।",nHome:"होम",nDash:"डैशबोर्ड",nHist:"हिस्ट्री",nRules:"नियम",nAdmin:"एडमिन",dashH:"डैशबोर्ड",stDone:"टूर्नामेंट",stTeams:"टीमें खेलीं",stPrize:"इनाम बँटा",upH:"आने वाले दिन",myH:"मेरे रजिस्ट्रेशन",noMine:"आपने अभी रजिस्टर नहीं किया है।",histH:"टूर्नामेंट हिस्ट्री",noHist:"अभी कोई टूर्नामेंट नहीं। ड्रॉ के बाद नतीजे यहाँ दिखेंगे।",inProg:"जारी है",details:"ब्रैकेट देखें",hide:"छुपाएँ",rulesH:"नियम",admDays:"दिन चुनें",admOnly:"सिर्फ़ एडमिन के लिए। ओनर के Google अकाउंट से लॉगिन करें।",postersH:"पोस्टर",soon:"पोस्टर जल्द आएगा",optLogin:"लॉगिन ज़रूरी नहीं है",regd:"रजिस्टर हो चुका ✓",tdy:"आज",fullTag:"फुल",mDay:"मैच का दिन:",daysH:"मैच का दिन चुनें",canH:"मैच कैंसिल",canMsg:"इस दिन के लिए रजिस्ट्रेशन बंद है।",drawH:"मैच ड्रॉ",rndTag:"🎲 रैंडम ड्रॉ",drawWait:"8 टीमें कन्फर्म होते ही ड्रॉ यहाँ दिखेगा।",rnd1:"राउंड 1",rnd2:"सेमी फाइनल",rnd3:"फाइनल",tbd:"तय नहीं",win:"विजेता",champ:"चैंपियन",runner:"उपविजेता",drawBtn:"🎲 टीमों का ड्रॉ (रैंडम)",redrawBtn:"🎲 दोबारा ड्रॉ",resetDraw:"ड्रॉ रीसेट",drawNeed:"8 टीमें कन्फर्म होने पर ड्रॉ खुलेगा।",shuf:"टीमें मिक्स हो रही हैं…",cancelH:"इस दिन को कैंसिल / दोबारा खोलें",notePh:"कारण (सबको दिखेगा)",cancelBtn:"इस दिन का मैच कैंसिल करें",reopenBtn:"इस दिन को दोबारा खोलें",cfmRedraw:"दोबारा ड्रॉ करें? मौजूदा विजेता हट जाएँगे।",cfmCancel:"इस दिन का मैच कैंसिल करें? सबको दिखेगा।",cfmReset:"ड्रॉ रीसेट करें?",admH:"एडमिन पैनल",aReg:"रजिस्टर्ड",aConf:"कन्फर्म",aCol:"कलेक्शन",aCopy:"कन्फर्म लिस्ट कॉपी करें",copied:"कॉपी हो गया ✓",game:"फ्री फायर",sub:"डेली फ्री फायर टूर्नामेंट",owner:"ओनर",daily:"रोज़ रात · 8:00 बजे",teams:"टीमें",every:"रोज़",left:"खाली स्लॉट",today:"आज का मैच:",
+hi:{statusH:"इस दिन का मैच स्टेटस",stCancel:"मैच कैंसिल (नहीं होगा)",stTbd:"अभी तय नहीं",stOn:"मैच होगा",tbdH:"मैच अभी तय नहीं",tbdMsg:"एडमिन के इस दिन का मैच कन्फर्म करते ही रजिस्ट्रेशन खुलेगा।",tbdS:"तय नहीं",tbdReg:"मैच कन्फर्म होने तक रजिस्ट्रेशन बंद है।",aTT:"टीमें",aTD:"ड्रॉ",aTS:"शेड्यूल",aTR:"नतीजे",aTC:"दिन कंट्रोल",needDraw:"पहले ड्रॉ करें (ड्रॉ टैब में)।",prizeL:"इनाम राशि",drawStat:"कन्फर्म टीमें",nMatch:"मैच",matchH:"आज के मैच",matchN:"मैच",winOf:"विजेता:",stNext:"अगला",stUp:"आने वाला",stDn:"खत्म",noSched:"एडमिन के ड्रॉ घोषित करते ही मैच का शेड्यूल यहाँ दिखेगा।",gapNote:"हर मैच के बीच 15–20 मिनट का ब्रेक।",schedH:"मैच शेड्यूल",startL:"पहला मैच शुरू होगा",gapL:"मैचों के बीच गैप (मिनट)",pairH:"राउंड 1 की जोड़ियाँ (आप तय करें)",manualBtn:"मैनुअल क्रम (बिना शफल)",cfmSwap:"जोड़ियाँ बदलने पर विजेता हट जाएँगे। जारी रखें?",reqNote:"आपका रजिस्ट्रेशन एक रिक्वेस्ट है। आपकी कितनी टीमें लेनी हैं, यह एडमिन तय करेगा। भुगतान और अप्रूवल के बाद ही टीम कन्फर्म होगी।",maxTeams:"रिक्वेस्ट की सीमा (20) पूरी हो गई। एडमिन को WhatsApp करें।",myCnt:"आपकी टीमें",editB:"बदलें",cancelEdit:"बदलाव रद्द करें",rbH:"नियम पुस्तिका",regClosed:"आज का रजिस्ट्रेशन शाम 6 बजे बंद हो गया। कोई और दिन चुनें।",nHome:"होम",nDash:"डैशबोर्ड",nHist:"हिस्ट्री",nRules:"नियम",nAdmin:"एडमिन",dashH:"डैशबोर्ड",stDone:"टूर्नामेंट",stTeams:"टीमें खेलीं",stPrize:"इनाम बँटा",upH:"आने वाले दिन",myH:"मेरे रजिस्ट्रेशन",noMine:"आपने अभी रजिस्टर नहीं किया है।",histH:"टूर्नामेंट हिस्ट्री",noHist:"अभी कोई टूर्नामेंट नहीं। ड्रॉ के बाद नतीजे यहाँ दिखेंगे।",inProg:"जारी है",details:"ब्रैकेट देखें",hide:"छुपाएँ",rulesH:"नियम",admDays:"दिन चुनें",admOnly:"सिर्फ़ एडमिन के लिए। ओनर के Google अकाउंट से लॉगिन करें।",postersH:"पोस्टर",soon:"पोस्टर जल्द आएगा",optLogin:"लॉगिन ज़रूरी नहीं है",regd:"रजिस्टर हो चुका ✓",tdy:"आज",fullTag:"फुल",mDay:"मैच का दिन:",daysH:"मैच का दिन चुनें",canH:"मैच कैंसिल",canMsg:"इस दिन के लिए रजिस्ट्रेशन बंद है।",drawH:"मैच ड्रॉ",rndTag:"🎲 रैंडम ड्रॉ",drawWait:"8 टीमें कन्फर्म होते ही ड्रॉ यहाँ दिखेगा।",rnd1:"राउंड 1",rnd2:"सेमी फाइनल",rnd3:"फाइनल",tbd:"तय नहीं",win:"विजेता",champ:"चैंपियन",runner:"उपविजेता",drawBtn:"🎲 टीमों का ड्रॉ (रैंडम)",redrawBtn:"🎲 दोबारा ड्रॉ",resetDraw:"ड्रॉ रीसेट",drawNeed:"8 टीमें कन्फर्म होने पर ड्रॉ खुलेगा।",shuf:"टीमें मिक्स हो रही हैं…",cancelH:"इस दिन को कैंसिल / दोबारा खोलें",notePh:"कारण (सबको दिखेगा)",cancelBtn:"इस दिन का मैच कैंसिल करें",reopenBtn:"इस दिन को दोबारा खोलें",cfmRedraw:"दोबारा ड्रॉ करें? मौजूदा विजेता हट जाएँगे।",cfmCancel:"इस दिन का मैच कैंसिल करें? सबको दिखेगा।",cfmReset:"ड्रॉ रीसेट करें?",admH:"एडमिन पैनल",aReg:"रजिस्टर्ड",aConf:"कन्फर्म",aCol:"कलेक्शन",aCopy:"कन्फर्म लिस्ट कॉपी करें",copied:"कॉपी हो गया ✓",game:"फ्री फायर",sub:"डेली फ्री फायर टूर्नामेंट",owner:"ओनर",daily:"रोज़ रात · 8:00 बजे",teams:"टीमें",every:"रोज़",left:"खाली स्लॉट",today:"आज का मैच:",
  prizeH:"एंट्री और इनाम",entry:"एंट्री / टीम",p1:"पहला इनाम",p2:"दूसरा इनाम",fmtH:"मैच का फॉर्मेट",
  r1:"<b>राउंड 1:</b> 8 टीमें 4 मैच खेलेंगी (4 vs 4) → 4 टीमें आगे बढ़ेंगी।",r2:"<b>सेमी फाइनल:</b> 4 टीमें 2 मैच खेलेंगी (2 vs 2) → 2 टीमें आगे बढ़ेंगी।",r3:"<b>फाइनल:</b> आखिरी 2 टीमें खिताब के लिए भिड़ेंगी।",
  live:"मैच रोज़ होंगे। YouTube पर LIVE दिखाया जाएगा — कभी-कभी लाइव नहीं कर पाऊँगा।",
@@ -37,7 +37,7 @@ hi:{aTT:"टीमें",aTD:"ड्रॉ",aTS:"शेड्यूल",aTR:"�
  full:"इस दिन के सभी 8 स्लॉट भर चुके हैं। कोई और दिन चुनें!",bad:"कृपया सारी जानकारी सही भरें (UID में सिर्फ़ नंबर)।",ok:"रजिस्टर हो गया! WhatsApp खुल रहा है — बस Send दबाएँ।",
  as:"लॉगिन:",adm:"एडमिन",mark:"कन्फर्म करें ✓",unm:"अनकन्फर्म",delq:"यह टीम हटाएँ?",err:"कुछ गड़बड़ हुई: ",
  needLogin:"यहाँ अभी लॉगिन उपलब्ध नहीं है।",wa:"नमस्ते Redhead eSports! मैंने रात 8 बजे के Free Fire टूर्नामेंट के लिए रजिस्टर किया है।\nतारीख: {d}\nटीम: {t}\nIGN: {i}\nUID: {u}\nमोबाइल: {m}\nएंट्री ₹234 – कृपया पेमेंट की जानकारी भेजें।"},
-hl:{aTT:"Teams",aTD:"Draw",aTS:"Schedule",aTR:"Results",aTC:"Day control",needDraw:"Pehle draw karo (Draw tab me).",prizeL:"Prize money",drawStat:"Confirmed teams",nMatch:"Match",matchH:"Aaj ke Matches",matchN:"Match",winOf:"Winner of",stNext:"NEXT",stUp:"Upcoming",stDn:"Done",noSched:"Admin draw announce karega to match schedule yahan dikhega.",gapNote:"Har match ke beech 15–20 min ka gap.",schedH:"Match Schedule",startL:"Pehla match shuru hoga",gapL:"Matches ke beech gap (min)",pairH:"Round 1 ki jodiyan (aap decide karo)",manualBtn:"Manual order (bina shuffle)",cfmSwap:"Jodiyan badalne par winners hat jayenge. Continue?",reqNote:"Aapka registration ek request hai. Aapki kitni teams leni hain ye admin decide karega. Payment aur approval ke baad hi team confirm hogi.",maxTeams:"Request limit (20) poori ho gayi. Admin ko WhatsApp karo.",myCnt:"Aapki teams",editB:"Edit",cancelEdit:"Edit cancel karo",rbH:"Rulebook",regClosed:"Aaj ka registration shaam 6 baje band ho gaya. Dusra din chuno.",nHome:"Home",nDash:"Dashboard",nHist:"History",nRules:"Rules",nAdmin:"Admin",dashH:"Dashboard",stDone:"Tournaments",stTeams:"Teams khelin",stPrize:"Prize baanta",upH:"Aane wale Din",myH:"Mere Registrations",noMine:"Aapne abhi register nahi kiya hai.",histH:"Tournament History",noHist:"Abhi koi tournament nahi. Draw ke baad results yahan dikhenge.",inProg:"Chal raha hai",details:"Bracket dekho",hide:"Chhupao",rulesH:"Rules",admDays:"Din Chuno",admOnly:"Sirf Admin ke liye. Owner ke Google account se login karo.",postersH:"Posters",soon:"Poster jald aayega",optLogin:"Login zaroori nahi hai",regd:"Register ho chuka ✓",tdy:"Aaj",fullTag:"FULL",mDay:"Match ka din:",daysH:"Match Day Chuno",canH:"Match Cancel",canMsg:"Is din ke liye registration band hai.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"8 teams confirm hote hi draw yahan dikhega.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Teams Draw (Random)",redrawBtn:"🎲 Dobara Draw",resetDraw:"Draw Reset",drawNeed:"8 teams confirm hone par draw khulega.",shuf:"Teams mix ho rahi hain…",cancelH:"Is din ko Cancel / Dobara Kholo",notePh:"Reason (sabko dikhega)",cancelBtn:"Is din ka match Cancel karo",reopenBtn:"Is din ko dobara kholo",cfmRedraw:"Dobara draw karein? Abhi ke winners hat jayenge.",cfmCancel:"Is din ka match cancel karein? Sabko dikhega.",cfmReset:"Draw reset karein?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collection",aCopy:"Confirmed list copy karo",copied:"Copy ho gaya ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Roz Raat · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots bache",today:"Aaj ka match:",
+hl:{statusH:"Is din ka match status",stCancel:"Match cancel (nahi hoga)",stTbd:"Abhi decide nahi",stOn:"Match hoga",tbdH:"Match abhi decide nahi hua",tbdMsg:"Admin is din ka match confirm karega tab registration khulega.",tbdS:"Decide nahi",tbdReg:"Match confirm hone tak registration band hai.",aTT:"Teams",aTD:"Draw",aTS:"Schedule",aTR:"Results",aTC:"Day control",needDraw:"Pehle draw karo (Draw tab me).",prizeL:"Prize money",drawStat:"Confirmed teams",nMatch:"Match",matchH:"Aaj ke Matches",matchN:"Match",winOf:"Winner of",stNext:"NEXT",stUp:"Upcoming",stDn:"Done",noSched:"Admin draw announce karega to match schedule yahan dikhega.",gapNote:"Har match ke beech 15–20 min ka gap.",schedH:"Match Schedule",startL:"Pehla match shuru hoga",gapL:"Matches ke beech gap (min)",pairH:"Round 1 ki jodiyan (aap decide karo)",manualBtn:"Manual order (bina shuffle)",cfmSwap:"Jodiyan badalne par winners hat jayenge. Continue?",reqNote:"Aapka registration ek request hai. Aapki kitni teams leni hain ye admin decide karega. Payment aur approval ke baad hi team confirm hogi.",maxTeams:"Request limit (20) poori ho gayi. Admin ko WhatsApp karo.",myCnt:"Aapki teams",editB:"Edit",cancelEdit:"Edit cancel karo",rbH:"Rulebook",regClosed:"Aaj ka registration shaam 6 baje band ho gaya. Dusra din chuno.",nHome:"Home",nDash:"Dashboard",nHist:"History",nRules:"Rules",nAdmin:"Admin",dashH:"Dashboard",stDone:"Tournaments",stTeams:"Teams khelin",stPrize:"Prize baanta",upH:"Aane wale Din",myH:"Mere Registrations",noMine:"Aapne abhi register nahi kiya hai.",histH:"Tournament History",noHist:"Abhi koi tournament nahi. Draw ke baad results yahan dikhenge.",inProg:"Chal raha hai",details:"Bracket dekho",hide:"Chhupao",rulesH:"Rules",admDays:"Din Chuno",admOnly:"Sirf Admin ke liye. Owner ke Google account se login karo.",postersH:"Posters",soon:"Poster jald aayega",optLogin:"Login zaroori nahi hai",regd:"Register ho chuka ✓",tdy:"Aaj",fullTag:"FULL",mDay:"Match ka din:",daysH:"Match Day Chuno",canH:"Match Cancel",canMsg:"Is din ke liye registration band hai.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"8 teams confirm hote hi draw yahan dikhega.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Teams Draw (Random)",redrawBtn:"🎲 Dobara Draw",resetDraw:"Draw Reset",drawNeed:"8 teams confirm hone par draw khulega.",shuf:"Teams mix ho rahi hain…",cancelH:"Is din ko Cancel / Dobara Kholo",notePh:"Reason (sabko dikhega)",cancelBtn:"Is din ka match Cancel karo",reopenBtn:"Is din ko dobara kholo",cfmRedraw:"Dobara draw karein? Abhi ke winners hat jayenge.",cfmCancel:"Is din ka match cancel karein? Sabko dikhega.",cfmReset:"Draw reset karein?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collection",aCopy:"Confirmed list copy karo",copied:"Copy ho gaya ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Roz Raat · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots bache",today:"Aaj ka match:",
  prizeH:"Entry aur Prize",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
  r1:"<b>Round 1:</b> 8 teams 4 match khelengi (4 vs 4) → 4 teams aage.",r2:"<b>Semi Final:</b> 4 teams 2 match khelengi (2 vs 2) → 2 teams aage.",r3:"<b>Final:</b> aakhri 2 teams title ke liye ladengi.",
  live:"Daily match hoga. YouTube pe LIVE aaunga — kabhi kabhi live nahi kar paaunga.",
@@ -83,6 +83,8 @@ function fmtTime(draw, n, lc) {
   const p = (draw.start || "20:00").split(":").map(Number), tot = p[0] * 60 + p[1] + n * (draw.gap || 20);
   return new Date(2000, 0, 1, Math.floor(tot / 60) % 24, tot % 60).toLocaleTimeString(lc, { hour: "numeric", minute: "2-digit" });
 }
+
+const stOf = (d) => (!d ? "tbd" : d.status ? d.status : d.cancelled ? "cancel" : "on"); // cancel | tbd | on
 
 /* ====== SFX (browser khud banata hai, audio file nahi chahiye) ====== */
 const snd = { muted: false, ac: null };
@@ -291,7 +293,7 @@ export default function App() {
     return () => { sb.removeChannel(ch); clearInterval(iv); };
   }, [load]);
 
-  const tds = dayStates[keyOf(0)] || {}, tdraw = tds.draw || null, tcancel = !!tds.cancelled;
+  const tds = dayStates[keyOf(0)] || {}, tdraw = tds.draw || null, tst = stOf(dayStates[keyOf(0)]), tcancel = tst === "cancel";
   const ml = tdraw ? matchList(tdraw) : [];
   const nextNo = (ml.find((m) => !(m.w === 0 || m.w === 1) && m.a && m.b) || {}).no;
 
@@ -300,7 +302,8 @@ export default function App() {
   const aKeys = Array.from({ length: DAYS + 2 }, (_, i) => keyOf(i - 2));
   const D = page === "admin" ? aKeys[aSel] : days[Math.min(sel, DAYS - 1)];
   const ds = dayStates[D] || {};
-  const cancelled = !!ds.cancelled;
+  const dst = stOf(dayStates[D]);
+  const cancelled = dst === "cancel", tbd = dst === "tbd";
   const draw = ds.draw || null;
   const teams = rows.filter((x) => x.date === D).sort((a, b) => (a.at || 0) - (b.at || 0));
   const conf = teams.filter((x) => x.paid);
@@ -312,7 +315,7 @@ export default function App() {
   const full = conf.length >= MAX;
   const REG_CLOSE_HOUR = 18; // aaj ka registration shaam 6 baje band (band na karna ho to 24 likho)
   const late = D === keyOf(0) && new Date().getHours() >= REG_CLOSE_HOUR;
-  const closed = full || cancelled || late;
+  const closed = full || cancelled || tbd || late;
   const isA = !!(user && user.isOwner);
   const dLong = dateOf(D).toLocaleDateString(loc[L], { weekday: "long", day: "numeric", month: "long" });
   const dShort = dateOf(D).toLocaleDateString(loc[L], { weekday: "short", day: "numeric", month: "short" });
@@ -335,7 +338,7 @@ export default function App() {
   }
 
   async function register() {
-    if (closed) { say(cancelled ? t("canMsg") : late ? t("regClosed") : t("full"), "er"); return; }
+    if (closed) { say(cancelled ? t("canMsg") : tbd ? t("tbdReg") : late ? t("regClosed") : t("full"), "er"); return; }
     const team = f.team.trim(), ign = f.ign.trim(), uid = f.uid.trim(), mob = f.mob.replace(/\D/g, "");
     if (!team || !ign || !/^\d{6,14}$/.test(uid) || mob.length < 10 || mob.length > 13) { say(t("bad"), "er"); sfx.err(); return; }
     const ed = editId && user ? myTeams.find((x) => x.id === editId) : null;
@@ -361,7 +364,7 @@ export default function App() {
   }
   async function saveState(patch) {
     const cur = dayStates[D] || {};
-    const row = { date: D, cancelled: !!cur.cancelled, note: cur.note || "", draw: cur.draw || null, ...patch, updated_at: new Date().toISOString() };
+    const row = { date: D, cancelled: !!cur.cancelled, note: cur.note || "", draw: cur.draw || null, status: cur.status ? cur.status : (dayStates[D] ? stOf(dayStates[D]) : "on"), ...patch, updated_at: new Date().toISOString() };
     const r = await sb.from("day_state").upsert(row);
     if (r.error) { alert(t("err") + r.error.message); return false; }
     load(); return true;
@@ -395,9 +398,9 @@ export default function App() {
     for (let rr = r + 1; rr < 3; rr++) { ri = Math.floor(ri / 2); delete w[rr + "-" + ri]; }
     await saveState({ draw: { ...draw, w } });
   }
-  async function toggleCancel() {
-    if (!cancelled) { if (!window.confirm(t("cfmCancel"))) return; await saveState({ cancelled: true, note: note.trim() }); }
-    else await saveState({ cancelled: false, note: "" });
+  async function setStatus(st) {
+    if (st === "cancel" && !window.confirm(t("cfmCancel"))) return;
+    await saveState({ status: st, cancelled: st === "cancel", note: st === "cancel" ? note.trim() : "" });
   }
 
   const pickLang = (l) => { setL(l); try { localStorage.setItem("lang", l); } catch (e) {} };
@@ -443,10 +446,10 @@ export default function App() {
             {days.map((k, i) => {
               const dt = dateOf(k), st = dayStates[k], n = rows.filter((x) => x.date === k && x.paid).length;
               return (
-                <button key={k} className={"day" + (i === sel ? " on" : "") + (st && st.cancelled ? " cx" : "")} onClick={() => setSel(i)}>
+                <button key={k} className={"day" + (i === sel ? " on" : "") + (stOf(st) === "cancel" ? " cx" : "")} onClick={() => setSel(i)}>
                   <small>{i === 0 ? t("tdy") : dt.toLocaleDateString(loc[L], { weekday: "short" })}</small>
                   <b>{dt.getDate()}</b>
-                  <em>{st && st.cancelled ? "✕" : n >= MAX ? t("fullTag") : n + "/" + MAX}</em>
+                  <em>{stOf(st) === "cancel" ? "✕" : stOf(st) === "tbd" ? "?" : n >= MAX ? t("fullTag") : n + "/" + MAX}</em>
                 </button>
               );
             })}
@@ -464,6 +467,7 @@ export default function App() {
             <div className="mu" style={{ marginTop: 10 }}>{t("mDay")} <b>{dLong} · 8:00 PM</b></div>
           </div></section>
 
+          {tbd && <div className="bn tb">⏳ {t("tbdH")}<small>{t("tbdMsg")}</small></div>}
           {cancelled && (
             <div className="bn">⚠ {t("canH")}{ds.note && <small>{ds.note}</small>}<small>{t("canMsg")}</small></div>
           )}
@@ -490,7 +494,7 @@ export default function App() {
               <div className="mu" style={{ marginTop: 6, fontSize: 13 }}>{t("reqNote")}</div>
               <button className="btn" disabled={closed} onClick={register}>{editId && user ? t("upd") : t("regBtn")} · {dShort}</button>
               {editId && <button className="btn gh" onClick={() => { setEditId(null); setF((p) => ({ ...p, team: "", ign: "" })); }}>{t("cancelEdit")}</button>}
-              <div className={"msg " + (closed ? "er" : reg.cls)}>{cancelled ? t("canMsg") : late ? t("regClosed") : full ? t("full") : reg.txt}</div>
+              <div className={"msg " + (closed ? "er" : reg.cls)}>{cancelled ? t("canMsg") : tbd ? t("tbdReg") : late ? t("regClosed") : full ? t("full") : reg.txt}</div>
             </div>
           </section>
 
@@ -516,7 +520,7 @@ export default function App() {
             )) : <div className="mu">{t("none")}</div>}
           </div></section>
 
-          {!cancelled && (
+          {!cancelled && !tbd && (
             <section className="sec"><h2>{t("drawH")}</h2><div className="card">
               {R ? (
                 <>
@@ -548,7 +552,8 @@ export default function App() {
           <>
           <section className="sec"><h2>{t("matchH")}</h2>
             {tcancel && <div className="bn">⚠ {t("canH")}{tds.note && <small>{tds.note}</small>}</div>}
-            {!tcancel && (tdraw ? (
+            {tst === "tbd" && <div className="bn tb">⏳ {t("tbdH")}<small>{t("tbdMsg")}</small></div>}
+            {tst === "on" && (tdraw ? (
               <>
                 <div className="mu" style={{ marginBottom: 10 }}>{dateOf(keyOf(0)).toLocaleDateString(loc[L], { weekday: "long", day: "numeric", month: "long" })} · {t("gapNote")}</div>
                 {ml.map((m) => {
@@ -582,7 +587,7 @@ export default function App() {
           <section className="sec"><h2>{t("upH")}</h2><div className="card">
             {days.map((k) => { const st = dayStates[k], n = rows.filter((x) => x.date === k && x.paid).length; return (
               <div className="row" key={k}><span>{dateOf(k).toLocaleDateString(loc[L], { weekday: "long", day: "numeric", month: "short" })}</span>
-                <span className={"pill" + (st && st.cancelled ? "" : " ok")}>{st && st.cancelled ? t("canH") : n >= MAX ? t("fullTag") : n + "/" + MAX}</span></div>); })}
+                <span className={"pill" + (stOf(st) === "on" ? " ok" : "")}>{stOf(st) === "cancel" ? t("canH") : stOf(st) === "tbd" ? t("tbdS") : n >= MAX ? t("fullTag") : n + "/" + MAX}</span></div>); })}
           </div></section>
           <section className="sec"><h2>{t("myH")}</h2><div className="card">
             {mineRows.length ? mineRows.map((x) => (
@@ -622,8 +627,8 @@ export default function App() {
             <>
               <section className="sec"><h2>{t("admDays")}</h2><div className="days">
                 {aKeys.map((k, i) => { const dt = dateOf(k), st = dayStates[k], n = rows.filter((x) => x.date === k && x.paid).length; return (
-                  <button key={k} className={"day" + (i === aSel ? " on" : "") + (st && st.cancelled ? " cx" : "")} onClick={() => setASel(i)}>
-                    <small>{dt.toLocaleDateString(loc[L], { weekday: "short" })}</small><b>{dt.getDate()}</b><em>{st && st.cancelled ? "✕" : n + "/" + MAX}</em>
+                  <button key={k} className={"day" + (i === aSel ? " on" : "") + (stOf(st) === "cancel" ? " cx" : "")} onClick={() => setASel(i)}>
+                    <small>{dt.toLocaleDateString(loc[L], { weekday: "short" })}</small><b>{dt.getDate()}</b><em>{stOf(st) === "cancel" ? "✕" : stOf(st) === "tbd" ? "?" : n + "/" + MAX}</em>
                   </button>); })}
               </div></section>
               <div key={D} className="slide">
@@ -696,9 +701,14 @@ export default function App() {
                   {aTab === "res" && (R ? <Bracket R={R} t={t} isA={true} pick={pick} /> : <div className="mu">{t("needDraw")}</div>)}
                   {aTab === "day" && (
                     <>
-                      <label style={{ marginTop: 0 }}>{t("cancelH")}</label>
-                      <input value={note} onChange={(e) => setNote(e.target.value)} maxLength={120} placeholder={t("notePh")} disabled={cancelled} />
-                      <button className={"btn " + (cancelled ? "gh" : "dg")} onClick={toggleCancel}>{cancelled ? t("reopenBtn") : t("cancelBtn")}</button>
+                      <label style={{ marginTop: 0 }}>{t("statusH")}</label>
+                      <div className="opt3">
+                        {[["cancel", "❌", "stCancel"], ["tbd", "⏳", "stTbd"], ["on", "✅", "stOn"]].map((x) => (
+                          <button key={x[0]} className={"opt " + x[0] + (dst === x[0] ? " on" : "")} onClick={() => setStatus(x[0])}><span>{x[1]}</span><b>{t(x[2])}</b></button>
+                        ))}
+                      </div>
+                      <label>{t("notePh")}</label>
+                      <input value={note} onChange={(e) => setNote(e.target.value)} maxLength={120} placeholder={t("notePh")} />
                     </>
                   )}
                 </div></section>
