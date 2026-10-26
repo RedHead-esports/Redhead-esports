@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import logoImg from "./logo.jpg";
+import rulebook from "./rulebook.jpg";
 
 /* ====== SETTINGS ====== */
 const OWNER_WA = "916206549468";
@@ -13,7 +14,7 @@ const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /* ====== LANGUAGES ====== */
 const T = {
-en:{optLogin:"Login is optional",regd:"Registered ✓",tdy:"Today",fullTag:"FULL",mDay:"Match day:",daysH:"Pick Match Day",canH:"Match Cancelled",canMsg:"Registration is closed for this day.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"The draw will appear here once all 8 teams are confirmed.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Draw Teams (Random)",redrawBtn:"🎲 Draw Again",resetDraw:"Reset draw",drawNeed:"Draw unlocks when 8 teams are confirmed.",shuf:"Shuffling…",cancelH:"Cancel / Reopen this day",notePh:"Reason (everyone will see this)",cancelBtn:"Cancel this day's match",reopenBtn:"Reopen this day",cfmRedraw:"Draw again? Current winners will be cleared.",cfmCancel:"Cancel this day's match? Everyone will see it.",cfmReset:"Reset the draw?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collected",aCopy:"Copy confirmed list",copied:"Copied ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Every Night · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots left",today:"Today's match:",
+en:{rbH:"Rulebook",regClosed:"Registration for today closed at 6:00 PM. Pick another day.",nHome:"Home",nDash:"Dashboard",nHist:"History",nRules:"Rules",nAdmin:"Admin",dashH:"Dashboard",stDone:"Tournaments",stTeams:"Teams played",stPrize:"Prize paid",upH:"Upcoming Days",myH:"My Registrations",noMine:"You have not registered yet.",histH:"Tournament History",noHist:"No tournaments yet. Results appear here after the draw.",inProg:"In progress",details:"View bracket",hide:"Hide",rulesH:"Rules",admDays:"Select Day",admOnly:"Admin only. Login with the owner Google account.",postersH:"Posters",soon:"Poster coming soon",optLogin:"Login is optional",regd:"Registered ✓",tdy:"Today",fullTag:"FULL",mDay:"Match day:",daysH:"Pick Match Day",canH:"Match Cancelled",canMsg:"Registration is closed for this day.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"The draw will appear here once all 8 teams are confirmed.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Draw Teams (Random)",redrawBtn:"🎲 Draw Again",resetDraw:"Reset draw",drawNeed:"Draw unlocks when 8 teams are confirmed.",shuf:"Shuffling…",cancelH:"Cancel / Reopen this day",notePh:"Reason (everyone will see this)",cancelBtn:"Cancel this day's match",reopenBtn:"Reopen this day",cfmRedraw:"Draw again? Current winners will be cleared.",cfmCancel:"Cancel this day's match? Everyone will see it.",cfmReset:"Reset the draw?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collected",aCopy:"Copy confirmed list",copied:"Copied ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Every Night · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots left",today:"Today's match:",
  prizeH:"Entry & Prize Pool",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
  r1:"<b>Round 1:</b> 8 teams play 4 matches (4 vs 4) → 4 teams advance.",r2:"<b>Semi Final:</b> 4 teams play 2 matches (2 vs 2) → 2 teams advance.",r3:"<b>Final:</b> the last 2 teams fight for the title.",
  live:"Daily matches. Streamed LIVE on YouTube — occasionally I may not be able to go live.",
@@ -24,7 +25,7 @@ en:{optLogin:"Login is optional",regd:"Registered ✓",tdy:"Today",fullTag:"FULL
  full:"All 8 slots for this day are full. Pick another day!",bad:"Please fill all details correctly (UID: numbers only).",ok:"Registered! WhatsApp is opening — just press Send.",
  as:"Signed in as",adm:"Admin",mark:"Mark paid",unm:"Unpaid",delq:"Remove this team?",err:"Something went wrong: ",
  needLogin:"Login is not available here yet.",wa:"Hi Redhead eSports! I registered for the 8 PM Free Fire tournament.\nDate: {d}\nTeam: {t}\nIGN: {i}\nUID: {u}\nMobile: {m}\nEntry ₹234 – please share payment details."},
-hi:{optLogin:"लॉगिन ज़रूरी नहीं है",regd:"रजिस्टर हो चुका ✓",tdy:"आज",fullTag:"फुल",mDay:"मैच का दिन:",daysH:"मैच का दिन चुनें",canH:"मैच कैंसिल",canMsg:"इस दिन के लिए रजिस्ट्रेशन बंद है।",drawH:"मैच ड्रॉ",rndTag:"🎲 रैंडम ड्रॉ",drawWait:"8 टीमें कन्फर्म होते ही ड्रॉ यहाँ दिखेगा।",rnd1:"राउंड 1",rnd2:"सेमी फाइनल",rnd3:"फाइनल",tbd:"तय नहीं",win:"विजेता",champ:"चैंपियन",runner:"उपविजेता",drawBtn:"🎲 टीमों का ड्रॉ (रैंडम)",redrawBtn:"🎲 दोबारा ड्रॉ",resetDraw:"ड्रॉ रीसेट",drawNeed:"8 टीमें कन्फर्म होने पर ड्रॉ खुलेगा।",shuf:"टीमें मिक्स हो रही हैं…",cancelH:"इस दिन को कैंसिल / दोबारा खोलें",notePh:"कारण (सबको दिखेगा)",cancelBtn:"इस दिन का मैच कैंसिल करें",reopenBtn:"इस दिन को दोबारा खोलें",cfmRedraw:"दोबारा ड्रॉ करें? मौजूदा विजेता हट जाएँगे।",cfmCancel:"इस दिन का मैच कैंसिल करें? सबको दिखेगा।",cfmReset:"ड्रॉ रीसेट करें?",admH:"एडमिन पैनल",aReg:"रजिस्टर्ड",aConf:"कन्फर्म",aCol:"कलेक्शन",aCopy:"कन्फर्म लिस्ट कॉपी करें",copied:"कॉपी हो गया ✓",game:"फ्री फायर",sub:"डेली फ्री फायर टूर्नामेंट",owner:"ओनर",daily:"रोज़ रात · 8:00 बजे",teams:"टीमें",every:"रोज़",left:"खाली स्लॉट",today:"आज का मैच:",
+hi:{rbH:"नियम पुस्तिका",regClosed:"आज का रजिस्ट्रेशन शाम 6 बजे बंद हो गया। कोई और दिन चुनें।",nHome:"होम",nDash:"डैशबोर्ड",nHist:"हिस्ट्री",nRules:"नियम",nAdmin:"एडमिन",dashH:"डैशबोर्ड",stDone:"टूर्नामेंट",stTeams:"टीमें खेलीं",stPrize:"इनाम बँटा",upH:"आने वाले दिन",myH:"मेरे रजिस्ट्रेशन",noMine:"आपने अभी रजिस्टर नहीं किया है।",histH:"टूर्नामेंट हिस्ट्री",noHist:"अभी कोई टूर्नामेंट नहीं। ड्रॉ के बाद नतीजे यहाँ दिखेंगे।",inProg:"जारी है",details:"ब्रैकेट देखें",hide:"छुपाएँ",rulesH:"नियम",admDays:"दिन चुनें",admOnly:"सिर्फ़ एडमिन के लिए। ओनर के Google अकाउंट से लॉगिन करें।",postersH:"पोस्टर",soon:"पोस्टर जल्द आएगा",optLogin:"लॉगिन ज़रूरी नहीं है",regd:"रजिस्टर हो चुका ✓",tdy:"आज",fullTag:"फुल",mDay:"मैच का दिन:",daysH:"मैच का दिन चुनें",canH:"मैच कैंसिल",canMsg:"इस दिन के लिए रजिस्ट्रेशन बंद है।",drawH:"मैच ड्रॉ",rndTag:"🎲 रैंडम ड्रॉ",drawWait:"8 टीमें कन्फर्म होते ही ड्रॉ यहाँ दिखेगा।",rnd1:"राउंड 1",rnd2:"सेमी फाइनल",rnd3:"फाइनल",tbd:"तय नहीं",win:"विजेता",champ:"चैंपियन",runner:"उपविजेता",drawBtn:"🎲 टीमों का ड्रॉ (रैंडम)",redrawBtn:"🎲 दोबारा ड्रॉ",resetDraw:"ड्रॉ रीसेट",drawNeed:"8 टीमें कन्फर्म होने पर ड्रॉ खुलेगा।",shuf:"टीमें मिक्स हो रही हैं…",cancelH:"इस दिन को कैंसिल / दोबारा खोलें",notePh:"कारण (सबको दिखेगा)",cancelBtn:"इस दिन का मैच कैंसिल करें",reopenBtn:"इस दिन को दोबारा खोलें",cfmRedraw:"दोबारा ड्रॉ करें? मौजूदा विजेता हट जाएँगे।",cfmCancel:"इस दिन का मैच कैंसिल करें? सबको दिखेगा।",cfmReset:"ड्रॉ रीसेट करें?",admH:"एडमिन पैनल",aReg:"रजिस्टर्ड",aConf:"कन्फर्म",aCol:"कलेक्शन",aCopy:"कन्फर्म लिस्ट कॉपी करें",copied:"कॉपी हो गया ✓",game:"फ्री फायर",sub:"डेली फ्री फायर टूर्नामेंट",owner:"ओनर",daily:"रोज़ रात · 8:00 बजे",teams:"टीमें",every:"रोज़",left:"खाली स्लॉट",today:"आज का मैच:",
  prizeH:"एंट्री और इनाम",entry:"एंट्री / टीम",p1:"पहला इनाम",p2:"दूसरा इनाम",fmtH:"मैच का फॉर्मेट",
  r1:"<b>राउंड 1:</b> 8 टीमें 4 मैच खेलेंगी (4 vs 4) → 4 टीमें आगे बढ़ेंगी।",r2:"<b>सेमी फाइनल:</b> 4 टीमें 2 मैच खेलेंगी (2 vs 2) → 2 टीमें आगे बढ़ेंगी।",r3:"<b>फाइनल:</b> आखिरी 2 टीमें खिताब के लिए भिड़ेंगी।",
  live:"मैच रोज़ होंगे। YouTube पर LIVE दिखाया जाएगा — कभी-कभी लाइव नहीं कर पाऊँगा।",
@@ -35,7 +36,7 @@ hi:{optLogin:"लॉगिन ज़रूरी नहीं है",regd:"र�
  full:"इस दिन के सभी 8 स्लॉट भर चुके हैं। कोई और दिन चुनें!",bad:"कृपया सारी जानकारी सही भरें (UID में सिर्फ़ नंबर)।",ok:"रजिस्टर हो गया! WhatsApp खुल रहा है — बस Send दबाएँ।",
  as:"लॉगिन:",adm:"एडमिन",mark:"पेड करें",unm:"अनपेड",delq:"यह टीम हटाएँ?",err:"कुछ गड़बड़ हुई: ",
  needLogin:"यहाँ अभी लॉगिन उपलब्ध नहीं है।",wa:"नमस्ते Redhead eSports! मैंने रात 8 बजे के Free Fire टूर्नामेंट के लिए रजिस्टर किया है।\nतारीख: {d}\nटीम: {t}\nIGN: {i}\nUID: {u}\nमोबाइल: {m}\nएंट्री ₹234 – कृपया पेमेंट की जानकारी भेजें।"},
-hl:{optLogin:"Login zaroori nahi hai",regd:"Register ho chuka ✓",tdy:"Aaj",fullTag:"FULL",mDay:"Match ka din:",daysH:"Match Day Chuno",canH:"Match Cancel",canMsg:"Is din ke liye registration band hai.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"8 teams confirm hote hi draw yahan dikhega.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Teams Draw (Random)",redrawBtn:"🎲 Dobara Draw",resetDraw:"Draw Reset",drawNeed:"8 teams confirm hone par draw khulega.",shuf:"Teams mix ho rahi hain…",cancelH:"Is din ko Cancel / Dobara Kholo",notePh:"Reason (sabko dikhega)",cancelBtn:"Is din ka match Cancel karo",reopenBtn:"Is din ko dobara kholo",cfmRedraw:"Dobara draw karein? Abhi ke winners hat jayenge.",cfmCancel:"Is din ka match cancel karein? Sabko dikhega.",cfmReset:"Draw reset karein?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collection",aCopy:"Confirmed list copy karo",copied:"Copy ho gaya ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Roz Raat · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots bache",today:"Aaj ka match:",
+hl:{rbH:"Rulebook",regClosed:"Aaj ka registration shaam 6 baje band ho gaya. Dusra din chuno.",nHome:"Home",nDash:"Dashboard",nHist:"History",nRules:"Rules",nAdmin:"Admin",dashH:"Dashboard",stDone:"Tournaments",stTeams:"Teams khelin",stPrize:"Prize baanta",upH:"Aane wale Din",myH:"Mere Registrations",noMine:"Aapne abhi register nahi kiya hai.",histH:"Tournament History",noHist:"Abhi koi tournament nahi. Draw ke baad results yahan dikhenge.",inProg:"Chal raha hai",details:"Bracket dekho",hide:"Chhupao",rulesH:"Rules",admDays:"Din Chuno",admOnly:"Sirf Admin ke liye. Owner ke Google account se login karo.",postersH:"Posters",soon:"Poster jald aayega",optLogin:"Login zaroori nahi hai",regd:"Register ho chuka ✓",tdy:"Aaj",fullTag:"FULL",mDay:"Match ka din:",daysH:"Match Day Chuno",canH:"Match Cancel",canMsg:"Is din ke liye registration band hai.",drawH:"Match Draw",rndTag:"🎲 Random draw",drawWait:"8 teams confirm hote hi draw yahan dikhega.",rnd1:"Round 1",rnd2:"Semi Final",rnd3:"Final",tbd:"TBD",win:"Winner",champ:"Champion",runner:"Runner-up",drawBtn:"🎲 Teams Draw (Random)",redrawBtn:"🎲 Dobara Draw",resetDraw:"Draw Reset",drawNeed:"8 teams confirm hone par draw khulega.",shuf:"Teams mix ho rahi hain…",cancelH:"Is din ko Cancel / Dobara Kholo",notePh:"Reason (sabko dikhega)",cancelBtn:"Is din ka match Cancel karo",reopenBtn:"Is din ko dobara kholo",cfmRedraw:"Dobara draw karein? Abhi ke winners hat jayenge.",cfmCancel:"Is din ka match cancel karein? Sabko dikhega.",cfmReset:"Draw reset karein?",admH:"Admin Panel",aReg:"Registered",aConf:"Confirmed",aCol:"Collection",aCopy:"Confirmed list copy karo",copied:"Copy ho gaya ✓",game:"FREE FIRE",sub:"Daily Free Fire Tournament",owner:"Owner",daily:"Roz Raat · 8:00 PM",teams:"Teams",every:"Everyday",left:"Slots bache",today:"Aaj ka match:",
  prizeH:"Entry aur Prize",entry:"Entry / Team",p1:"1st Prize",p2:"2nd Prize",fmtH:"Match Format",
  r1:"<b>Round 1:</b> 8 teams 4 match khelengi (4 vs 4) → 4 teams aage.",r2:"<b>Semi Final:</b> 4 teams 2 match khelengi (2 vs 2) → 2 teams aage.",r3:"<b>Final:</b> aakhri 2 teams title ke liye ladengi.",
  live:"Daily match hoga. YouTube pe LIVE aaunga — kabhi kabhi live nahi kar paaunga.",
@@ -87,6 +88,67 @@ const sfx = {
   ok: () => { tone(523, 0.12, "triangle", 0.1, 0); tone(659, 0.12, "triangle", 0.1, 0.12); tone(784, 0.3, "triangle", 0.1, 0.24); },
   err: () => tone(180, 0.28, "sawtooth", 0.07),
 };
+
+
+const RULES = {
+  en: [
+    ["Registration", "Registration must be completed before 6:00 PM (with payment)."],
+    ["Teams", "The match will be between 8 teams, with 4 players per team."],
+    ["Map", "Map will be “Classic Squad Bermuda”."],
+    ["Rounds", "The match will be of 9 rounds."],
+    ["Headshot", "The match will be One Tap Headshot only."],
+    ["Weapons", "Only Desert Eagle and M1887 will be allowed."],
+    ["Fair Play", "Cheater / Hacker are not allowed. If caught, the entire team will be banned and the entry fee will not be refunded."],
+  ],
+  hi: [
+    ["रजिस्ट्रेशन", "रजिस्ट्रेशन शाम 6 बजे से पहले करना होगा (भुगतान के साथ)।"],
+    ["टीमें", "मैच 8 टीम के बीच होगा, प्रत्येक टीम में 4 खिलाड़ी होंगे।"],
+    ["मैप", "मैप “क्लासिक स्क्वाड बरमूडा” होगा।"],
+    ["राउंड", "मैच 9 राउंड का होगा।"],
+    ["हेडशॉट", "मैच वनटेप हेडशॉट का होगा।"],
+    ["हथियार", "गन सिर्फ Desert Eagle और M1887 रहेंगे।"],
+    ["फेयर प्ले", "चीटर / हैकर की अनुमति नहीं है, पकड़े जाने पर पूरी टीम बैन कर दी जाएगी, पैसे भी वापस नहीं होंगे।"],
+  ],
+  hl: [
+    ["Registration", "Registration shaam 6 baje se pehle karna hoga (payment ke saath)."],
+    ["Teams", "Match 8 teams ke beech hoga, har team me 4 players honge."],
+    ["Map", "Map “Classic Squad Bermuda” hoga."],
+    ["Rounds", "Match 9 rounds ka hoga."],
+    ["Headshot", "Match One Tap Headshot ka hoga."],
+    ["Weapons", "Gun sirf Desert Eagle aur M1887 rahenge."],
+    ["Fair Play", "Cheater / Hacker ki permission nahi hai. Pakde jaane par poori team BAN hogi aur paise bhi wapas nahi honge."],
+  ],
+};
+
+/* ====== POSTERS: repo me poster1.jpg, poster2.jpg ... daalo, apne aap dikh jayenge ====== */
+const posterMods = import.meta.glob("./poster*.{jpg,jpeg,png,webp}", { eager: true, query: "?url", import: "default" });
+const POSTERS = Object.keys(posterMods).sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).map((k) => posterMods[k]);
+
+function Posters({ t }) {
+  const ref = useRef(null);
+  const [big, setBig] = useState(null);
+  const items = POSTERS.length ? POSTERS : Array.from({ length: 6 }, () => null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || items.length < 2) return;
+    const iv = setInterval(() => {
+      const step = el.firstChild.offsetWidth + 10;
+      const end = el.scrollLeft + step >= el.scrollWidth - el.clientWidth - 5;
+      el.scrollTo({ left: end ? 0 : el.scrollLeft + step, behavior: "smooth" });
+    }, 4000);
+    return () => clearInterval(iv);
+  }, [items.length]);
+  return (
+    <section className="sec"><h2>{t("postersH")}</h2>
+      <div className="posters" ref={ref}>
+        {items.map((src, i) => src
+          ? <img key={i} src={src} alt={"Poster " + (i + 1)} loading="lazy" onClick={() => setBig(src)} />
+          : <div key={i} className="ph"><b>#{i + 1}</b><span>{t("soon")}</span></div>)}
+      </div>
+      {big && <div className="lb" onClick={() => setBig(null)}><img src={big} alt="" /></div>}
+    </section>
+  );
+}
 
 /* ====== BRACKET UI ====== */
 function Tm({ x, win, lose, canPick, onPick, t }) {
@@ -143,6 +205,12 @@ export default function App() {
   const [note, setNote] = useState("");
   const [shuf, setShuf] = useState(null);
   const tx = useRef(null);
+  const PAGES = ["home", "dash", "hist", "rules", "admin"];
+  const [page, setPage] = useState(() => { const h = window.location.hash.slice(1); return PAGES.includes(h) ? h : "home"; });
+  const [aSel, setASel] = useState(2);
+  const [hist, setHist] = useState([]);
+  const [openH, setOpenH] = useState(null);
+  const go = (p) => { setPage(p); try { window.history.replaceState(null, "", "#" + p); } catch (e) {} window.scrollTo(0, 0); };
   const [gid] = useState(() => {
     const mk = () => "g_" + ((window.crypto && crypto.randomUUID) ? crypto.randomUUID().replace(/-/g, "").slice(0, 16) : Math.random().toString(16).slice(2, 18));
     try { let g = localStorage.getItem("gid"); if (!g) { g = mk(); localStorage.setItem("gid", g); } return g; } catch (e) { return mk(); }
@@ -171,11 +239,13 @@ export default function App() {
 
   /* teams + day settings (live) */
   const load = useCallback(async () => {
-    const t0 = keyOf(0);
-    const [a, b] = await Promise.all([
+    const t0 = keyOf(-2);
+    const [a, b, h] = await Promise.all([
       sb.from("teams").select("*").gte("date", t0),
       sb.from("day_state").select("*").gte("date", t0),
+      sb.from("day_state").select("*").not("draw", "is", null).order("date", { ascending: false }).limit(40),
     ]);
+    if (!h.error) setHist(h.data);
     if (a.error) setLoginMsg("Error: " + a.error.message); else setRows(a.data);
     if (!b.error) { const m = {}; b.data.forEach((x) => { m[x.date] = x; }); setDayStates(m); }
   }, []);
@@ -191,7 +261,8 @@ export default function App() {
 
   /* selected day */
   const days = Array.from({ length: DAYS }, (_, i) => keyOf(i));
-  const D = days[Math.min(sel, DAYS - 1)];
+  const aKeys = Array.from({ length: DAYS + 2 }, (_, i) => keyOf(i - 2));
+  const D = page === "admin" ? aKeys[aSel] : days[Math.min(sel, DAYS - 1)];
   const ds = dayStates[D] || {};
   const cancelled = !!ds.cancelled;
   const draw = ds.draw || null;
@@ -200,7 +271,9 @@ export default function App() {
   const myKey = (user ? user.id : gid) + "_" + D;
   const mine = teams.find((x) => x.id === myKey) || null;
   const full = conf.length >= MAX && !mine;
-  const closed = full || cancelled;
+  const REG_CLOSE_HOUR = 18; // aaj ka registration shaam 6 baje band (band na karna ho to 24 likho)
+  const late = D === keyOf(0) && new Date().getHours() >= REG_CLOSE_HOUR;
+  const closed = full || cancelled || late;
   const isA = !!(user && user.isOwner);
   const dLong = dateOf(D).toLocaleDateString(loc[L], { weekday: "long", day: "numeric", month: "long" });
   const dShort = dateOf(D).toLocaleDateString(loc[L], { weekday: "short", day: "numeric", month: "short" });
@@ -212,8 +285,10 @@ export default function App() {
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
   const say = (txt, cls) => setReg({ txt, cls });
 
-  function openWA() {
-    const msg = t("wa").replace("{d}", dShort).replace("{t}", f.team.trim() || (mine && mine.team) || "").replace("{i}", f.ign.trim() || (mine && mine.ign) || "")
+  function openWA(x) {
+    const r = x && x.team ? x : null;
+    const dd = r ? dateOf(r.date).toLocaleDateString(loc[L], { weekday: "short", day: "numeric", month: "short" }) : dShort;
+    const msg = t("wa").replace("{d}", dd).replace("{t}", (r && r.team) || f.team.trim() || (mine && mine.team) || "").replace("{i}", (r && r.ign) || f.ign.trim() || (mine && mine.ign) || "")
       .replace("{u}", f.uid.trim() || "-").replace("{m}", f.mob.trim() || "-");
     const url = "https://wa.me/" + OWNER_WA + "?text=" + encodeURIComponent(msg);
     const w = window.open(url, "_blank");
@@ -221,7 +296,7 @@ export default function App() {
   }
 
   async function register() {
-    if (closed) { say(cancelled ? t("canMsg") : t("full"), "er"); return; }
+    if (closed) { say(cancelled ? t("canMsg") : late ? t("regClosed") : t("full"), "er"); return; }
     const team = f.team.trim(), ign = f.ign.trim(), uid = f.uid.trim(), mob = f.mob.replace(/\D/g, "");
     if (!team || !ign || !/^\d{6,14}$/.test(uid) || mob.length < 10 || mob.length > 13) { say(t("bad"), "er"); sfx.err(); return; }
     if (!user && mine) { say(t("regd"), "go"); return; }
@@ -285,6 +360,8 @@ export default function App() {
   };
 
   const R = draw ? build(draw) : null;
+  const done = hist.filter((x) => { const f2 = build(x.draw)[2][0]; return f2.w === 0 || f2.w === 1; });
+  const mineRows = rows.filter((x) => x.id.startsWith((user ? user.id : gid) + "_")).sort((a, b) => a.date.localeCompare(b.date));
 
   return (
     <>
@@ -297,6 +374,8 @@ export default function App() {
       </div></header>
 
       <main>
+        {page === "home" && (
+          <>
         <section className="hero">
           <img className="hlogo" alt="Red Head eSports logo" src={logoImg} />
           <div className="mu" style={{ color: "#cfcfd8" }}>{t("game")}</div>
@@ -305,18 +384,6 @@ export default function App() {
           <p className="mu" style={{ color: "#a9a9b6" }}>{t("owner")}: Rhx Andy</p>
           <span className="chip">{t("daily")}</span>
         </section>
-
-        <section className="sec"><h2>{t("prizeH")}</h2><div className="card"><div className="g3">
-          <div><b>₹234</b><small>{t("entry")}</small></div>
-          <div className="gd"><b>₹950</b><small>{t("p1")}</small></div>
-          <div className="gd"><b>₹600</b><small>{t("p2")}</small></div>
-        </div></div></section>
-
-        <section className="sec"><h2>{t("fmtH")}</h2><div className="card">
-          <ol className="steps"><li><H k="r1" /></li><li><H k="r2" /></li><li><H k="r3" /></li></ol>
-          <p className="mu" style={{ margin: "12px 0 0" }}>{t("live")}</p>
-          <div className="lk"><a href="https://youtube.com/@rhx_andy" target="_blank" rel="noopener noreferrer">▶ YouTube</a><a href="https://www.instagram.com/rhxesports_" target="_blank" rel="noopener noreferrer">◎ Instagram</a></div>
-        </div></section>
 
         <section className="sec"><h2>{t("daysH")}</h2>
           <div className="days">
@@ -367,7 +434,7 @@ export default function App() {
               <label>{t("fUid")}</label><input value={f.uid} onChange={set("uid")} inputMode="numeric" maxLength={14} autoComplete="off" />
               <label>{t("fMob")}</label><input value={f.mob} onChange={set("mob")} inputMode="tel" maxLength={15} autoComplete="tel" placeholder="98XXXXXXXX" />
               <button className="btn" disabled={closed || (!user && !!mine)} onClick={register}>{mine ? (user ? t("upd") : t("regd")) : t("regBtn")} · {dShort}</button>
-              <div className={"msg " + (closed ? "er" : reg.cls)}>{cancelled ? t("canMsg") : full ? t("full") : reg.txt}</div>
+              <div className={"msg " + (closed ? "er" : reg.cls)}>{cancelled ? t("canMsg") : late ? t("regClosed") : full ? t("full") : reg.txt}</div>
             </div>
           </section>
 
@@ -390,12 +457,85 @@ export default function App() {
               {R ? (
                 <>
                   <div className="mu" style={{ marginBottom: 4 }}>{t("rndTag")} · {new Date(draw.at).toLocaleTimeString(loc[L], { hour: "2-digit", minute: "2-digit" })}</div>
-                  <Bracket R={R} t={t} isA={isA} pick={pick} />
+                  <Bracket R={R} t={t} isA={false} pick={pick} />
                 </>
               ) : <div className="mu">{t("drawWait")}</div>}
             </div></section>
           )}
 
+        </div>
+
+          <Posters t={t} />
+        <section className="sec"><h2>{t("prizeH")}</h2><div className="card"><div className="g3">
+          <div><b>₹234</b><small>{t("entry")}</small></div>
+          <div className="gd"><b>₹950</b><small>{t("p1")}</small></div>
+          <div className="gd"><b>₹600</b><small>{t("p2")}</small></div>
+        </div></div></section>
+
+        <section className="sec"><h2>{t("fmtH")}</h2><div className="card">
+          <ol className="steps"><li><H k="r1" /></li><li><H k="r2" /></li><li><H k="r3" /></li></ol>
+          <p className="mu" style={{ margin: "12px 0 0" }}>{t("live")}</p>
+          <div className="lk"><a href="https://youtube.com/@rhx_andy" target="_blank" rel="noopener noreferrer">▶ YouTube</a><a href="https://www.instagram.com/rhxesports_" target="_blank" rel="noopener noreferrer">◎ Instagram</a></div>
+        </div></section>
+
+          </>
+        )}
+        {page === "dash" && (
+          <>
+          <section className="sec"><h2>{t("dashH")}</h2><div className="card"><div className="g3">
+            <div><b>{done.length}</b><small>{t("stDone")}</small></div>
+            <div><b>{done.length * 8}</b><small>{t("stTeams")}</small></div>
+            <div className="gd"><b>₹{done.length * 1550}</b><small>{t("stPrize")}</small></div>
+          </div></div></section>
+          <section className="sec"><h2>{t("upH")}</h2><div className="card">
+            {days.map((k) => { const st = dayStates[k], n = rows.filter((x) => x.date === k && x.paid).length; return (
+              <div className="row" key={k}><span>{dateOf(k).toLocaleDateString(loc[L], { weekday: "long", day: "numeric", month: "short" })}</span>
+                <span className={"pill" + (st && st.cancelled ? "" : " ok")}>{st && st.cancelled ? t("canH") : n >= MAX ? t("fullTag") : n + "/" + MAX}</span></div>); })}
+          </div></section>
+          <section className="sec"><h2>{t("myH")}</h2><div className="card">
+            {mineRows.length ? mineRows.map((x) => (
+              <div className="row" key={x.id}><span>{dateOf(x.date).toLocaleDateString(loc[L], { day: "numeric", month: "short" })} · <b>{x.team}</b></span>
+                <span><span className={"pill" + (x.paid ? " ok" : "")}>{x.paid ? t("paidS") : t("pendS")}</span>{!x.paid && <button className="sm" onClick={() => openWA(x)}>WhatsApp</button>}</span></div>
+            )) : <div className="mu">{t("noMine")}</div>}
+          </div></section>
+          </>
+        )}
+        {page === "hist" && (
+          <>
+          <section className="sec"><h2>{t("histH")}</h2>
+            {hist.length ? hist.map((x) => {
+              const HR = build(x.draw), fin = HR[2][0], ch = fin.w === 0 ? fin.a : fin.w === 1 ? fin.b : null, ru = fin.w === 0 ? fin.b : fin.w === 1 ? fin.a : null, open = openH === x.date;
+              return (
+                <div className="card" key={x.date} style={{ marginBottom: 10 }}>
+                  <div className="row" style={{ paddingTop: 0 }}><b>{dateOf(x.date).toLocaleDateString(loc[L], { weekday: "short", day: "numeric", month: "short", year: "numeric" })}</b><span className={"pill" + (ch ? " ok" : "")}>{ch ? "✓" : t("inProg")}</span></div>
+                  {ch && <div>🏆 <b>{ch.team}</b> <span className="mu">· ₹950</span></div>}
+                  {ru && <div className="mu">🥈 {ru.team} · ₹600</div>}
+                  <button className="btn gh" onClick={() => setOpenH(open ? null : x.date)}>{open ? t("hide") : t("details")}</button>
+                  {open && <Bracket R={HR} t={t} isA={false} pick={pick} />}
+                </div>);
+            }) : <div className="card mu">{t("noHist")}</div>}
+          </section>
+          </>
+        )}
+        {page === "rules" && (
+          <>
+          <section className="sec"><h2>{t("rulesH")}</h2><div className="card">
+            {(RULES[L] || RULES.en).map((r, i) => (<div className="rule" key={i}><span className="rn">{i + 1}</span><div><b>{r[0]}</b><p className="mu" style={{ margin: "2px 0 0" }}>{r[1]}</p></div></div>))}
+          </div></section>
+          <section className="sec"><h2>{t("rbH")}</h2><a href={rulebook} target="_blank" rel="noopener noreferrer"><img className="rbimg" src={rulebook} alt="Rulebook" /></a></section>
+          </>
+        )}
+        {page === "admin" && (
+          <>
+          {isA ? (
+            <>
+              <section className="sec"><h2>{t("admDays")}</h2><div className="days">
+                {aKeys.map((k, i) => { const dt = dateOf(k), st = dayStates[k], n = rows.filter((x) => x.date === k && x.paid).length; return (
+                  <button key={k} className={"day" + (i === aSel ? " on" : "") + (st && st.cancelled ? " cx" : "")} onClick={() => setASel(i)}>
+                    <small>{dt.toLocaleDateString(loc[L], { weekday: "short" })}</small><b>{dt.getDate()}</b><em>{st && st.cancelled ? "✕" : n + "/" + MAX}</em>
+                  </button>); })}
+              </div></section>
+              <div key={D} className="slide">
           {isA && (
             <section className="sec"><h2>{t("admH")} · {dShort}</h2><div className="card">
               <div className="g3">
@@ -432,12 +572,25 @@ export default function App() {
               <button className={"btn " + (cancelled ? "gh" : "dg")} onClick={toggleCancel}>{cancelled ? t("reopenBtn") : t("cancelBtn")}</button>
             </div></section>
           )}
-        </div>
+
+                {R && !cancelled && (<section className="sec"><h2>{t("drawH")}</h2><div className="card"><Bracket R={R} t={t} isA={true} pick={pick} /></div></section>)}
+              </div>
+            </>
+          ) : (
+            <section className="sec"><div className="card"><p className="mu" style={{ margin: 0 }}>{t("admOnly")}</p><button className="btn" onClick={login}>{t("loginBtn")}</button></div></section>
+          )}
+          </>
+        )}
 
         <footer>© Redhead eSports · Rhx Andy<br />
           <a href="https://youtube.com/@rhx_andy" target="_blank" rel="noopener noreferrer">YouTube</a> · <a href="https://www.instagram.com/rhxesports_" target="_blank" rel="noopener noreferrer">Instagram</a>
         </footer>
       </main>
+      <nav className="nav">
+        {[["home", "🏠", "nHome"], ["dash", "📊", "nDash"], ["hist", "🏆", "nHist"], ["rules", "📜", "nRules"]].concat(isA ? [["admin", "🛡", "nAdmin"]] : []).map((x) => (
+          <button key={x[0]} className={page === x[0] ? "on" : ""} onClick={() => go(x[0])}><span>{x[1]}</span><small>{t(x[2])}</small></button>
+        ))}
+      </nav>
     </>
   );
 }
