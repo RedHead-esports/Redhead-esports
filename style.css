@@ -229,3 +229,17 @@ select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);bac
 .opt.on.cancel{border-color:var(--rd);color:var(--rd);background:var(--s1)}
 .opt.on.tbd{border-color:var(--bl);color:var(--bl);background:var(--s1)}
 .opt.on.on{border-color:#2fbf71;color:#2fbf71;background:var(--s1)}
+
+/* ===== ROUND TRACKER ===== */
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;background:var(--mu)}
+.dot.a{background:var(--bl)}.dot.b{background:var(--rd)}
+.rds{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;padding:8px 10px 4px}
+.rc{padding:7px 0;border-radius:8px;border:1px solid var(--bd);background:var(--s2);color:var(--mu);font-family:"Bebas Neue",sans-serif;font-size:16px;cursor:pointer;position:relative}
+.rc:disabled{cursor:default;opacity:1}
+.rc.a{background:var(--bl)!important;color:#1a1400!important;border-color:var(--bl)}
+.rc.b{background:var(--rd)!important;color:#fff!important;border-color:var(--rd)}
+.rc sup{font-size:9px;position:absolute;top:0;right:2px}
+.rc.pen{outline:1px dashed #fff;outline-offset:-3px}
+.sc{font-family:"Bebas Neue",sans-serif;font-size:26px;color:var(--bl);margin-right:8px}
+.wl{padding:2px 12px 10px;font-size:13px}
+.rhint{padding:2px 12px 10px;font-size:12px}
