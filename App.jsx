@@ -443,11 +443,12 @@ export default function App() {
     const txt = "Redhead eSports - " + dLong + "\n" + conf.map((x, i) => (i + 1) + ". " + x.team + " (" + x.ign + ")").join("\n");
     try { await navigator.clipboard.writeText(txt); setCopied(true); setTimeout(() => setCopied(false), 1500); } catch (e) { window.prompt("Copy:", txt); }
   }
-  async function saveState(patch, key = key) {
+  async function saveState(patch, key = D) {
     const cur = dayStates[key] || {};
     const row = { date: key, cancelled: !!cur.cancelled, note: cur.note || "", draw: cur.draw || null, cfg: cur.cfg || null, status: cur.status ? cur.status : (dayStates[key] ? stOf(dayStates[key]) : "on"), ...patch, updated_at: new Date().toISOString() };
     const r = await sb.from("day_state").upsert(row);
     if (r.error) { alert(t("err") + r.error.message); return false; }
+    setDayStates((p) => ({ ...p, [key]: row }));
     load(); return true;
   }
   async function doDraw() {
@@ -867,9 +868,9 @@ export default function App() {
                       <label>{t("tsizeL")}</label>
                       <div className="szrow">{[1, 2, 3, 4].map((n) => <button key={n} className={"opt szb" + (cfg.size === n ? " on tbd" : "")} onClick={() => saveCfg({ size: n })}><b>{n}v{n}</b></button>)}</div>
                       <label>{t("timeL")}</label>
-                      <input type="time" value={cfg.time || ""} onChange={(e) => saveCfg({ time: e.target.value })} />
+                      <input type="time" key={"t" + D + (cfg.time || "")} defaultValue={cfg.time || ""} onChange={(e) => e.target.value && saveCfg({ time: e.target.value })} />
                       <label>{t("regCloseL")}</label>
-                      <input type="time" value={cfg.regClose || ""} onChange={(e) => saveCfg({ regClose: e.target.value })} />
+                      <input type="time" key={"r" + D + (cfg.regClose || "")} defaultValue={cfg.regClose || ""} onChange={(e) => e.target.value && saveCfg({ regClose: e.target.value })} />
                       {[["entry", "entryL"], ["p1", "p1L"], ["p2", "p2L"]].concat(cfg.mode === "classic" ? [["p3", "p3L"], ["max", "maxL"]] : []).map(([k, lb]) => (
                         <div key={k + D + cfg[k]}><label>{t(lb)}</label>
                           <input type="number" inputMode="numeric" defaultValue={cfg[k]} onBlur={(e) => { const v = Number(e.target.value); if (!isNaN(v) && v >= 0 && v !== cfg[k]) saveCfg({ [k]: v }); }} /></div>
@@ -879,7 +880,7 @@ export default function App() {
                   {atab === "room" && (
                     <>
                       <label style={{ marginTop: 0 }}>{t("roomTimeL")}</label>
-                      <input type="time" value={cfg.roomTime || cfg.time || ""} onChange={(e) => saveCfg({ roomTime: e.target.value })} />
+                      <input type="time" key={"m" + D + (cfg.roomTime || "")} defaultValue={cfg.roomTime || cfg.time || ""} onChange={(e) => e.target.value && saveCfg({ roomTime: e.target.value })} />
                       <label>{t("roomIdL")}</label><input value={rid} onChange={(e) => setRid(e.target.value)} maxLength={30} />
                       <label>{t("roomPwL")}</label><input value={rpw} onChange={(e) => setRpw(e.target.value)} maxLength={30} />
                       <button className="btn" onClick={() => saveRoom("time")}>{t("roomSave")}</button>
@@ -944,7 +945,7 @@ export default function App() {
                   {atab === "sched" && (draw ? (
                     <>
                       <label style={{ marginTop: 0 }}>{t("startL")}</label>
-                      <input type="time" value={draw.start || cfg.time || ""} onChange={(e) => saveState({ draw: { ...draw, start: e.target.value } })} />
+                      <input type="time" key={"s" + D + (draw.start || "")} defaultValue={draw.start || cfg.time || ""} onChange={(e) => e.target.value && saveState({ draw: { ...draw, start: e.target.value } })} />
                       <label>{t("gapL")}</label>
                       <select value={draw.gap || 20} onChange={(e) => saveState({ draw: { ...draw, gap: Number(e.target.value) } })}>{[10, 15, 20, 25, 30].map((g) => <option key={g} value={g}>{g}</option>)}</select>
                       <label>{t("pairH")}</label>
