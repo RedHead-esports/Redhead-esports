@@ -265,3 +265,17 @@ select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);bac
 .pd.third{border-color:#a8744a}
 .pd.third .money{font-size:34px;color:#c98b5a}
 .pd.third h3{font-size:24px}
+
+/* ===== SLOTS / SIZE / PROMPT / RULES BOX ===== */
+.day.hm:not(.on){border-color:#2fbf71}
+.day.hm em{color:#2fbf71}
+.day.slotb{flex:0 0 96px}
+.day.slotb.add{border-style:dashed;justify-content:center}
+.day.slotb.add b{font-size:26px;color:var(--bl)}
+.day.slotb.add small{color:var(--bl);font-size:11px}
+.szrow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}
+.szb{justify-content:center;padding:12px 0}
+.pbox{width:100%;min-height:210px;padding:12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:14px/1.5 Rajdhani,"Noto Sans Devanagari",sans-serif;margin-top:8px}
+.rulebox{margin-bottom:12px;padding:12px 14px;border-radius:12px;border:2px solid var(--bl);background:var(--s2)}
+.rr{font-size:14px;margin-top:6px}
+.rr b{color:var(--bl)}
