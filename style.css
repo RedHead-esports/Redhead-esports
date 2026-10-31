@@ -243,3 +243,25 @@ select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);bac
 .sc{font-family:"Bebas Neue",sans-serif;font-size:26px;color:var(--bl);margin-right:8px}
 .wl{padding:2px 12px 10px;font-size:13px}
 .rhint{padding:2px 12px 10px;font-size:12px}
+
+/* ===== LUCKY DRAW ===== */
+.lucky{margin-top:16px;padding:16px;border-radius:14px;background:var(--s2);border:1px solid var(--bd);text-align:center}
+.lucky .mlabel{margin:14px 0 8px;color:var(--mu);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+.lucky .chips{justify-content:center}
+.lucky .chip{font-size:15px;padding:3px 12px}
+.lucky .chip.win{border-color:var(--bl);color:var(--bl);background:var(--s1)}
+.lwin{margin-top:16px;padding:14px;border-radius:12px;border:2px solid var(--bl);background:var(--s1)}
+.lwin small{display:block;color:var(--mu);font-family:"Bebas Neue",sans-serif;letter-spacing:3px;font-size:16px}
+.lwin h3{margin:2px 0;font-family:"Bebas Neue",Rajdhani,sans-serif;font-weight:400;font-size:36px;letter-spacing:1px;color:var(--bl)}
+.lm{font-family:"Bebas Neue",sans-serif;font-size:52px;line-height:1.1;color:var(--bl);letter-spacing:2px}
+.lnote{font-size:13px;margin:12px 0 0}
+
+/* ===== MODES / ROOM ===== */
+.rmbox{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.rmbox div{background:var(--s1);border:1px solid var(--bl);border-radius:10px;padding:10px;text-align:center}
+.rmbox small{display:block;color:var(--mu);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.rmbox b{font-family:"Bebas Neue",sans-serif;font-size:30px;color:var(--bl);letter-spacing:2px;word-break:break-all;font-weight:400}
+.seatin{width:84px!important;text-align:center}
+.pd.third{border-color:#a8744a}
+.pd.third .money{font-size:34px;color:#c98b5a}
+.pd.third h3{font-size:24px}
