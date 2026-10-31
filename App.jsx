@@ -394,7 +394,7 @@ export default function App() {
   const [aTab, setATab] = useState("teams");
   const adml = draw ? matchList(draw) : [];
   const full = conf.length >= cfg.max;
-  const nowD = new Date(now), nowHM = pad(nowD.getHours()) + ":" + pad(nowD.getMinutes());
+  const nowD = new Date(), nowHM = pad(nowD.getHours()) + ":" + pad(nowD.getMinutes());
   const late = !!cfg.regClose && D.slice(0, 10) === keyOf(0) && nowHM >= cfg.regClose;
   const closed = full || cancelled || tbd || late;
   const isA = !!(user && user.isOwner);
