@@ -281,3 +281,5 @@ select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);bac
 .rr b{color:var(--bl)}
 
 .rfbox{margin-bottom:12px;padding:12px 14px;border-radius:12px;border:2px solid var(--rd);background:var(--s2);color:var(--rd);font-weight:700;font-size:15px;line-height:1.4}
+
+.rbanner{display:block;width:100%;border-radius:12px;border:1px solid var(--bd);margin-bottom:12px}
