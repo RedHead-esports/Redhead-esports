@@ -283,3 +283,9 @@ select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);bac
 .rfbox{margin-bottom:12px;padding:12px 14px;border-radius:12px;border:2px solid var(--rd);background:var(--s2);color:var(--rd);font-weight:700;font-size:15px;line-height:1.4}
 
 .rbanner{display:block;width:100%;border-radius:12px;border:1px solid var(--bd);margin-bottom:12px}
+
+/* ===== GAME SWITCH ===== */
+.gsw{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.gsw button{padding:12px 8px;border-radius:12px;border:1px solid var(--bd);background:var(--s2);color:var(--mu);font-family:"Bebas Neue",Rajdhani,"Noto Sans Devanagari",sans-serif;font-size:22px;letter-spacing:1px;cursor:pointer}
+.gsw button.on{border-color:var(--bl);color:var(--bl);background:var(--s1)}
+.gsw span{margin-right:6px}
