@@ -289,3 +289,43 @@ select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);bac
 .gsw button{padding:12px 8px;border-radius:12px;border:1px solid var(--bd);background:var(--s2);color:var(--mu);font-family:"Bebas Neue",Rajdhani,"Noto Sans Devanagari",sans-serif;font-size:22px;letter-spacing:1px;cursor:pointer}
 .gsw button.on{border-color:var(--bl);color:var(--bl);background:var(--s1)}
 .gsw span{margin-right:6px}
+
+/* ===== APP-STYLE HOME / LOBBY ===== */
+.welcome{display:flex;align-items:center;gap:12px;margin-top:4px;padding:12px;border-radius:14px;background:var(--s1);border:1px solid var(--bd)}
+.welcome img{width:48px;height:48px;border-radius:50%}
+.welcome div{flex:1;display:flex;flex-direction:column;min-width:0}
+.welcome small{color:var(--mu);font-size:13px}
+.welcome b{font-family:"Bebas Neue",Rajdhani,sans-serif;font-weight:400;font-size:24px;letter-spacing:1px;color:var(--tx);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.noticebar{margin-top:10px;padding:10px 14px;border-radius:12px;background:var(--s2);border:1px solid var(--bl);color:var(--bl);font-weight:700;font-size:14px}
+.qa{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.qa button,.cthree button{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 4px;border-radius:14px;border:1px solid var(--bd);background:var(--s1);color:var(--tx);cursor:pointer;font-family:Rajdhani,"Noto Sans Devanagari",sans-serif}
+.qa span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--s2);border:1px solid var(--bl);font-size:20px}
+.qa small,.cthree small{font-size:12px;font-weight:700;color:var(--mu)}
+.cthree{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cthree span{font-size:24px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{padding:0;border-radius:14px;border:1px solid var(--bd);background:var(--s1);overflow:hidden;cursor:pointer;display:flex;flex-direction:column}
+.tile img,.tile-ph{width:100%;aspect-ratio:1/1;object-fit:cover;display:grid;place-items:center;font-size:54px;background:var(--s2)}
+.tile b{display:block;padding:8px;background:var(--bl);color:#1a1400;font-family:"Bebas Neue",Rajdhani,sans-serif;font-weight:400;font-size:20px;letter-spacing:1px}
+.ltabs{display:flex;border-bottom:2px solid var(--bd)}
+.ltabs button{flex:1;padding:12px 4px;border:0;background:none;color:var(--mu);font-family:"Bebas Neue",Rajdhani,"Noto Sans Devanagari",sans-serif;font-size:19px;letter-spacing:1px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.ltabs button.on{color:var(--bl);border-bottom-color:var(--bl)}
+.mcard{margin-top:12px;border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid var(--bd)}
+.mc-img{display:block;width:100%}
+.mc-body{padding:12px}
+.mc-head{display:flex;align-items:center;gap:10px}
+.mc-head img{width:40px;height:40px;border-radius:50%}
+.mc-head b{display:block;font-family:"Bebas Neue",Rajdhani,sans-serif;font-weight:400;font-size:21px;letter-spacing:.5px}
+.mc-head small{color:var(--mu);font-size:13px}
+.mc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;text-align:center}
+.mc-cell small{display:block;color:var(--mu);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.mc-cell b{display:block;font-size:17px;margin-top:2px}
+.mc-pp{margin-top:10px;padding:4px 10px;border-radius:10px;background:var(--s2)}
+.mc-bar{height:6px;border-radius:9px;background:var(--bd);overflow:hidden;margin-top:12px}
+.mc-bar i{display:block;height:100%;background:var(--bl)}
+.mc-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+.mc-foot .btn{width:auto;margin:0;padding:8px 18px;font-size:16px}
+.menu{margin-top:14px;display:grid;gap:8px}
+.menui{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;border:1px solid var(--bd);background:var(--s1);color:var(--tx);font-family:Rajdhani,"Noto Sans Devanagari",sans-serif;font-size:17px;font-weight:700;cursor:pointer;text-align:left}
+.menui span{width:28px;text-align:center}
+.menui i{margin-left:auto;font-style:normal;color:var(--mu);font-size:22px}
